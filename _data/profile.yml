@@ -1,0 +1,61 @@
+education:
+  - school: 창현
+    academic: 고등학교
+    period: 2011.03~2014.02
+    status: 졸업
+
+  - school: 세종
+    academic: 대학교
+    period: 2014.03~2020.02
+    status: 졸업예정
+    major: 컴퓨터공학과
+    credit:
+      total: 123
+      average: 4.08
+
+certificate:
+  - name: 
+    acquisition_date: 
+    host: 
+
+  - name: 
+    acquisition_date: 
+    host: 
+
+prize:
+  - name: 우수상
+    title: 제 5회 창의설계경진대회 
+    host: 세종대학교 소프트웨어 중심대학 사업단
+    date: 2018.06.08
+    description: 멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
+  - name: 최우수상
+    title: 세종대학교 ICT 아이디어 공모전
+    host: 세종대학교
+    date: 2018.12.10
+    description: 김정호가 VR기술을 접목시킨 드론과 3D맵핑 기술을 활용한다면? 아이디어 제출
+  - name: 최우수상
+    title: 제 7회 창의설계경진대회 
+    host: 세종대학교 소프트웨어 중심대학 사업단
+    date: 2019.06.07
+    description: 머신러닝을 통한 중고 책 거래가 자동측정 모듈 구축
+activities:
+  - name: 창의설계경진대회(창의학기제)
+    type: 공모전/대회
+    period: 2018.03.01~2018.06.08
+    details: 멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
+    url: 
+  - name: 세종대학교 ICT 아이디어 공모전
+    type: 공모전/대회
+    period: 2018.11.20~2018.12.10
+    details: 김정호가 VR기술을 접목시킨 드론과 3D맵핑 기술을 활용한다면? 아이디어 제출
+    url: 
+  - name: 창의설계경진대회(창의학기제)
+    type: 공모전/대회
+    period: 2019.03.01~2019.06.07
+    details: 머신러닝을 통한 중고 책 거래가 자동측정 모듈 구축
+    url: 
+extraactivities:
+  - name: 대한민국 자전거 국토종주
+    type: 인증서
+    period: 2019.07.17~2019.07.22
+    details: 인천아라뱃길부터 낙동강하굿둑까지의 633km 자전거길을 자전거로 종주
