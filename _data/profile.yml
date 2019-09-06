@@ -41,8 +41,13 @@ prize:
 activities:
   - name: 창의설계경진대회(창의학기제)
     type: 공모전/대회
-    period: 2018.03.01~2018.06.08
-    details: 멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
+    period: 2019.03.01~2019.06.07
+    details: 머신러닝을 통한 중고 책 거래가 자동측정 모듈 구축
+    url: 
+  - name: 캡스톤디자인(산학협력프로젝트)
+    type: 수업/프로젝트
+    period: 2019.03.01~2019.06.07
+    details: 세종대학교 고전독서 관리 시스템 구축
     url: 
   - name: 세종대학교 ICT 아이디어 공모전
     type: 공모전/대회
@@ -51,8 +56,8 @@ activities:
     url: 
   - name: 창의설계경진대회(창의학기제)
     type: 공모전/대회
-    period: 2019.03.01~2019.06.07
-    details: 머신러닝을 통한 중고 책 거래가 자동측정 모듈 구축
+    period: 2018.03.01~2018.06.08
+    details: 멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
     url: 
 extraactivities:
   - name: 대한민국 자전거 국토종주
