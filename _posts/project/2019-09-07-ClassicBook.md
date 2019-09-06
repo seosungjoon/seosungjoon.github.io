@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CapStone Design(산학협력프로젝트)"
-date: 2019-09-07 00:40:00 +0900
+date: 2019-09-06 21:00:00 +0900
 category: project
 period: 2019.03.01~2019.06.07
 description: 세종대학교 고전독서 인증관리 어플리케이션 개발
