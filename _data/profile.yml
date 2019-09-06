@@ -48,17 +48,17 @@ activities:
     type: 수업/프로젝트
     period: 2019.03.01~2019.06.07
     details: 세종대학교 고전독서 관리 시스템 구축
-    url: 
+    url: https://seosungjoon.github.io/project/2019/09/06/ClassicBook/
   - name: 세종대학교 ICT 아이디어 공모전
     type: 공모전/대회
     period: 2018.11.20~2018.12.10
     details: 김정호가 VR기술을 접목시킨 드론과 3D맵핑 기술을 활용한다면? 아이디어 제출
-    url: 
+    url: https://seosungjoon.github.io/project/2019/09/06/ICT/
   - name: 창의설계경진대회(창의학기제)
     type: 공모전/대회
     period: 2018.03.01~2018.06.08
     details: 멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
-    url: 
+    url: https://seosungjoon.github.io/project/2019/09/06/GISApp/
 extraactivities:
   - name: 대한민국 자전거 국토종주
     type: 인증서
