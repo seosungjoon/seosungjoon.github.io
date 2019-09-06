@@ -5,7 +5,7 @@ date: 2019-09-06 21:00:00 +0900
 category: project
 period: 2019.03.01~2019.06.07
 description: 세종대학교 고전독서 인증관리 어플리케이션 개발
-more_details: [ "java", "android", "swift", "js", "git", "mysql", "nodejs"]
+more_details: [ "java", "android", "aws", "linux", "swift", "git", "mysql", "nodejs"]
 ---
 세종대학교 SW융합대학 주관 캡스톤 디자인 산학협력 프로젝트
 
