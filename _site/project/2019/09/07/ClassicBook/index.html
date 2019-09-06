@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>CapStone Design(산학협력프로젝트) - SungJoon's Portfolio</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="/assets/css/post.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
+</head>
+<body>
+    
+
+
+<nav id="navbar" class="navbar
+  ">
+  <div class="title">
+    <img class="profile" src="/assets/img/profile.jpg" alt="profile"/>
+    <h1 class="main-title"><a href="/">SungJoon's Portfolio</a></h1>
+  </div>
+  <img id="hamburger" src="/assets/img/hamburger.png">
+  <div id="menu" class="menu">
+    <ul class="categories">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li class="category">
+              <a class="" href="/category/profile/">profile</a>
+            </li>
+          
+        
+          
+            <li class="category">
+              <a class=" active " href="/category/project/">project</a>
+            </li>
+          
+        
+          
+            <li class="category">
+              <a class="" href="/category/skills/">skills</a>
+            </li>
+          
+        
+          
+        
+          
+        
+    </ul>
+  </div>
+</nav>
+
+    <div class="container
+      
+        container__post
+      ">
+      <div class="contents">
+  <h1>CapStone Design(산학협력프로젝트)</h1>
+  <p>세종대학교 SW융합대학 주관 캡스톤 디자인 산학협력 프로젝트</p>
+
+<h2 id="member">Member</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">이름</th>
+      <th style="text-align: center">역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">서성준</td>
+      <td style="text-align: center">Android App 개발 &amp; AWS 구축</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">남기범</td>
+      <td style="text-align: center">IOS App 개발 &amp; Back-end 구축</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">김신욱</td>
+      <td style="text-align: center">DB 구축 &amp; Android App 개발</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">유경수</td>
+      <td style="text-align: center">Back-end 구축</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="environment">Environment</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Language</th>
+      <th style="text-align: center">back-end</th>
+      <th style="text-align: center">DB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Java / Swift / Javascript</td>
+      <td style="text-align: center">AWS EC2 Linux / Node.js / Express.js / Phantom.js</td>
+      <td style="text-align: center">MySQL</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="개발-목표">개발 목표</h3>
+
+<p>세종대학교 고전독서시스템에 대한 현 상황으로써,</p>
+
+<p>-웹사이트로만 구현 되어 있는 대양 휴머니티 사이트 접속의 불편하다는 점과 사이트의 존재조차 학생들이 모른다는 점</p>
+
+<p>-시험 예약의 번거로움과 시험에 대한 no show</p>
+
+<p>-고전독서 관리 페이지와 도서대여 홈페이지가 독립적으로 운행되어서 인증 관리와 도서 대여가 한 페이지에서 이루어지지 않아 번거로움을 초래 한다는 것.</p>
+
+<p>또한, 세종대 학생이라면 필수적으로 거쳐야할 고전독서 인증제에 대하여 학생들에게 설문조사를 실시하였고, 결과는 많은 학생들이 인증제가 있다는 것은 인지하고 있지만, 대양휴머니티 칼리지 사이트에서 운영하고 있다는 사실은 응답자 중 절반이 모르는 상황이었다.</p>
+
+<p>이에 따라, 학생들의 실용성과 편의성 향상을 위하여 사용자의 고전 독서 인증 정보를 확인 할 수 있는 기능과 시험 1시간 전 알림 기능 그리고 어플리케이션을 통한 고전 독서 인증 시험 예약 기능, 마지막으로 학술정보원 도서 검색 기능 등 사용자 요구사항을 최대한 반영한 어플리케이션을 만드는 것이 목표다.</p>
+
+<h3 id="설계-사양서">설계 사양서</h3>
+
+<h2 id="1프로젝트-방향">1.프로젝트 방향</h2>
+
+<p>해당 프로젝트는 세종대 학생들의 고전독서 관리를 위한 어플리케이션이다.</p>
+
+<h2 id="2use-case-diagram--class-diagram">2.Use-Case Diagram &amp; Class Diagram</h2>
+
+<blockquote>
+  <p>Use-Case</p>
+</blockquote>
+
+<p><img src="/assets/img/project/ClassicBook/use-case.png" alt="use-case" /></p>
+
+<blockquote>
+  <p>Class Diagram</p>
+</blockquote>
+
+<p><img src="/assets/img/project/ClassicBook/class-diagram.png" alt="class-diagram" /></p>
+
+<h2 id="3내용-구성">3.내용 구성</h2>
+
+<p><img src="/assets/img/project/ClassicBook/sample1.PNG" alt="내용1" /></p>
+
+<p><img src="/assets/img/project/ClassicBook/sample2.PNG" alt="내용2" /></p>
+
+<h2 id="4구현-설명">4.구현 설명</h2>
+
+<p><img src="/assets/img/project/ClassicBook/sys-arch.PNG" alt="시스템구성" /></p>
+
+<p>NPM 모듈인 Phantomjs라는 것을 사용해 현재 운행되고 있는 대양휴머니티 칼리지 웹 사이트에 실제로 로그인할 수 있도록 연동하였다.</p>
+
+<p>어플리케이션에서 입력된 학번과 비밀번호를 서버에 전송하여 Phantomjs를 통해 로그인 정보가 일치하는지 아닌지 판별하고, 일치할 경우 사용자의 고전독서 인증 정보를 크롤링해와서 자료를 어플리케이션으로 전송한다.</p>
+
+<p>독서당 시험 예약의 경우, 서버에서 MySQL을 연동하여 자체적인 데이터를 구축해서 구현하였다. 사용자가 예약정보를 서버로 전송하면 DataBase에 저장된다.</p>
+
+<p>독서당 시험 1시간 전 알림은 예약한 시험 예약 정보를 기반으로 1시간 전 알림을 구현했다. 자체적인 라이브러리를 사용하여 정해진 시간이 되면 알림이 온다.</p>
+
+<p>학술정보원 고전독서 검색 기능은 학술정보원 웹 페이지에서 ISBN으로 검색한 결과를 크롤링하여 구현하게 되었다.</p>
+
+<h3 id="android--linux">Android + Linux</h3>
+
+<h2 id="자동-로그인">자동 로그인</h2>
+
+<p>SharedPreferences를 이용하여 자동로그인을 구현하였습니다. 본 어플 사용 특성상, 사용자B가 사용자A의 스마트폰에서 로그인하는 경우는 없다고 판단하여 본 메소드를 적용하였습니다.</p>
+
+<p>본 로그인은, phantom.js가 구동되고 있는 AWS EC2 서버에 ID와 PW를 요청하면 phantom.js가 실제 웹사이트에 접속하여 로그인을 한 뒤, 원하는 정보를 파싱하여 클라이언트에 전송해 주는 방식입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="c1">//자동로그인 정보 저장</span>
+<span class="n">SharedPreferences</span> <span class="n">pref</span> <span class="o">=</span> <span class="n">PreferenceManager</span><span class="o">.</span><span class="na">getDefaultSharedPreferences</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">auID</span> <span class="o">=</span> <span class="n">pref</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"ID"</span><span class="o">,</span><span class="s">"null"</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">auPW</span> <span class="o">=</span> <span class="n">pref</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"PW"</span><span class="o">,</span><span class="s">"null"</span><span class="o">);</span>
+
+<span class="c1">//자동로그인시 바로 로그인 시도</span>
+<span class="k">if</span><span class="o">(</span><span class="n">pref</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"auto_login"</span><span class="o">,</span><span class="s">"0"</span><span class="o">).</span><span class="na">equals</span><span class="o">(</span><span class="s">"1"</span><span class="o">)){</span>
+    <span class="n">autoLogin</span><span class="o">.</span><span class="na">setChecked</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"login info : "</span> <span class="o">+</span> <span class="n">auID</span> <span class="o">+</span> <span class="n">auPW</span><span class="o">);</span>
+    <span class="n">text_id</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">auID</span><span class="o">);</span>
+    <span class="n">text_pw</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">auPW</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="n">loginURL</span> <span class="o">+</span> <span class="n">loginID</span> <span class="o">+</span> <span class="n">auID</span> <span class="o">+</span> <span class="n">loginPW</span> <span class="o">+</span> <span class="n">auPW</span><span class="o">;</span>
+    <span class="n">LoginTask</span> <span class="n">loginTask</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LoginTask</span><span class="o">(</span><span class="n">url</span><span class="o">,</span><span class="kc">null</span><span class="o">);</span>
+    <span class="n">loginTask</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>자동로그인 체크박스에 체크를 하고 로그인 시도를 하게 되면 로그인을 시도한 시점의 ID와 PW를 저장합니다.
+이후 어플리케이션 재실행 시 자동로그인을 시도한 기록이 있기 때문에 이전 로그인했던 ID와 PW를 불러와 자동으로 로그인을 시도합니다.</p>
+
+<p>로그인을 하는 과정은 서버와 비동기 통신을 해야 하는 과정이기 때문에 AsyncTask를 사용하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;{</span>
+    <span class="n">SweetAlertDialog</span> <span class="n">pDialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span><span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">PROGRESS_TYPE</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">ContentValues</span> <span class="n">values</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nf">LoginTask</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">ContentValues</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPreExecute</span><span class="o">(){</span>
+        <span class="c1">//..</span>
+        <span class="c1">//..login progress bar</span>
+        <span class="c1">//..</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">turl</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">result</span><span class="o">;</span>
+        <span class="n">RequestHttpURLConnection</span> <span class="n">requestHttpURLConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RequestHttpURLConnection</span><span class="o">();</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">requestHttpURLConnection</span><span class="o">.</span><span class="na">request</span><span class="o">(</span><span class="n">turl</span><span class="o">,</span> <span class="n">values</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">String</span> <span class="n">result</span><span class="o">){</span>
+        <span class="n">pDialog</span><span class="o">.</span><span class="na">dismiss</span><span class="o">();</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPostExecute</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">JsonParser</span> <span class="n">Parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonParser</span><span class="o">();</span>
+            <span class="n">JsonObject</span> <span class="n">jsonObj</span> <span class="o">=</span> <span class="o">(</span><span class="n">JsonObject</span><span class="o">)</span> <span class="n">Parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+            <span class="n">JSONParser</span> <span class="n">jsglobal</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONParser</span><span class="o">)</span><span class="n">getApplicationContext</span><span class="o">();</span>
+            <span class="c1">//..</span>
+            <span class="c1">//..setting parse data</span>
+            <span class="c1">//..</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat_auth</span><span class="o">().</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+                <span class="n">JsonObject</span> <span class="n">object</span> <span class="o">=</span> <span class="o">(</span><span class="n">JsonObject</span><span class="o">)</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat_auth</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="c1">//..</span>
+                <span class="c1">//..setting parse data</span>
+                <span class="c1">//..</span>
+            <span class="o">}</span>
+            <span class="c1">//..</span>
+            <span class="c1">//..setting parse data</span>
+            <span class="c1">//..</span>
+
+            <span class="k">if</span><span class="o">(</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"0"</span><span class="o">)){</span>
+                <span class="k">new</span> <span class="nf">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">ERROR_TYPE</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">setTitleText</span><span class="o">(</span><span class="s">"오류"</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"ID와 PW를 확인해 주세요"</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+                <span class="n">finish</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">NullPointerException</span> <span class="n">e</span><span class="o">){</span>
+            <span class="k">new</span> <span class="nf">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">ERROR_TYPE</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setTitleText</span><span class="o">(</span><span class="s">"오류"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"서버와의 통신이 원활하지 않습니다. \n다시 시도해 주세요"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>로그인성공 후 서버에서 파싱해온 고전독서 인증정보들은 전역 클래스에 별도로 저장됩니다. 이 데이터들은 어플리케이션 종료 시 삭제됩니다.</p>
+
+<h2 id="recyclerview">RecyclerView</h2>
+
+<p>안드로이드 UI구성은 BottomNavigationView로 구성되었으며, 각각의 Fragment에 RecyclerView를 동적으로 적용하여 스크롤이 가능하도록 하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RecyclerAdapter_Setting</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">RecyclerAdapter_Setting</span><span class="o">.</span><span class="na">ItemViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="c1">// adapter에 들어갈 list</span>
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Data_Recycle_Setting</span><span class="o">&gt;</span> <span class="n">listData1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">public</span> <span class="n">Context</span> <span class="n">context</span><span class="o">;</span>
+    <span class="nd">@NonNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ItemViewHolder</span> <span class="nf">onCreateViewHolder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// LayoutInflater를 이용하여 전 단계에서 만들었던 item.xml을 inflate 시킵니다.</span>
+        <span class="c1">// return 인자는 ViewHolder 입니다.</span>
+        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">LayoutInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">getContext</span><span class="o">()).</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">recycle_settings</span><span class="o">,</span> <span class="n">parent</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="na">getContext</span><span class="o">();</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ItemViewHolder</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBindViewHolder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">ItemViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">holder</span><span class="o">.</span><span class="na">onBind</span><span class="o">(</span><span class="n">listData1</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getItemCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//TO DO</span>
+    <span class="o">}</span>
+    <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="n">Data_Recycle_Setting</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//TO DO</span>
+    <span class="o">}</span>
+    <span class="c1">// RecyclerView의 핵심인 ViewHolder 입니다.</span>
+    <span class="c1">// 여기서 subView를 setting 해줍니다.</span>
+    <span class="kd">class</span> <span class="nc">ItemViewHolder</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">{</span>
+        <span class="c1">//TO DO</span>
+    <span class="o">}</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="alarm-with-oreo">Alarm (with Oreo)</h2>
+
+<p>안드로이드 버전이 8.0으로 넘어가면서, 기존 사용하던 기타 여러 가지 기능들이 더이상 사용할 수 없거나, 다른 방법을 찾아야 하는 경우가 생겼습니다. 그 중 알람기능인 Notification Channel 에 대한 대응책을 마련해야 하는 상황이었습니다.</p>
+
+<p>안드로이드 OS 8.0부터는 별도의 Notification Channel을 만들어주어야 하며 createNotificationChannel()을 호출해주면 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="k">if</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="o">.</span><span class="na">VERSION_CODES</span><span class="o">.</span><span class="na">O</span><span class="o">){</span>
+    <span class="kt">int</span> <span class="n">importance</span> <span class="o">=</span> <span class="n">NotificationManager</span><span class="o">.</span><span class="na">IMPORTANCE_HIGH</span><span class="o">;</span>
+    <span class="n">NotificationChannel</span> <span class="n">notificationChannel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NotificationChannel</span><span class="o">(</span><span class="n">channelId</span><span class="o">,</span> <span class="n">channelName</span><span class="o">,</span> <span class="n">importance</span><span class="o">);</span>
+    <span class="n">notificationManager</span><span class="o">.</span><span class="na">createNotificationChannel</span><span class="o">(</span><span class="n">notificationChannel</span><span class="o">);</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>이렇게 설정해 두면 선택한 시간에 상단바 Notification이 울립니다.</p>
+
+<h2 id="aws">AWS</h2>
+
+<p>AWS EC2 학생 프리티어 12개월을 이용하여, AWS Linux서버를 구축하였습니다.</p>
+
+<p>서버를 구축한 뒤, Elastic IP를 할당받아 고정IP를 부여받았습니다.</p>
+
+<p>AWS Linux 내에서 Node.js파일을 24시간 가동하기 위하여 forever모듈을 설치하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-linux" data-lang="linux"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>$ npm install forever -g
+$ forever start app.js</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>하지만 구동 약 15시간 뒤에 알 수 없는 Crash로 인하여 forever는 구동되고 있으나 runtime error가 발생하는 증상을 보였습니다.</p>
+
+<p>이는 Node.js 코드 내의 url이 main.js를 시작시키고 정상적으로 휴무상태에 들어가야 하지만, forever는 휴무상태 없이 그대로 돌고 있기 때문에, 자원낭비를 계속하게 되고 결국은 코드가 죽어버리는 현상이 발생하는 것이었습니다.</p>
+
+<p>따라서, 다른 자원 관리 모듈인 pm2를 설치하였으며, 그 후 아무런 문제 없이 정상 작동하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-linux" data-lang="linux"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>$ npm install pm2 -g
+$ pm2 start app.js</pre></td></tr></tbody></table></code></pre></figure>
+
+</div>
+
+    </div>
+</body>
+</html>
