@@ -78,6 +78,9 @@ NPM 모듈인 Phantomjs라는 것을 사용해 현재 운행되고 있는 대양
 학술정보원 고전독서 검색 기능은 학술정보원 웹 페이지에서 ISBN으로 검색한 결과를 크롤링하여 구현하게 되었다.
 
 ### Android + Linux
+<br>
+제가 구현한 기능 위주로 작성하였습니다.
+<br>
 
 ## 자동 로그인
 
@@ -253,3 +256,21 @@ $ forever start app.js
 $ npm install pm2 -g
 $ pm2 start app.js
 {% endhighlight %}
+
+### Contact
+<br>
+<a href="https://github.com/seosungjoon/ClassicBook"  style="color: #5779ff" target="_blank">
+<U>Android Source 바로가기</U></a>
+<br>
+<br>
+> email : seojj95@naver.com
+>
+> by 서성준, 남기범, 김신욱, 유경수
+<br>
+<br>
+SW등록번호 C-2019-017229<br>
+
+<a href="https://www.cros.or.kr/ntis/CtPgmPopInfo.cc?regid=C-2019-017229"  style="color: #5779ff" target="_blank"><U>등록정보보러가기</U></a>
+
+<br>
+"본 연구는 과학기술정보통신부 및 정보통신기술진흥센터의 SW중심대학 사업의 연구결과로 수행되었음"(2015-0-00938)
