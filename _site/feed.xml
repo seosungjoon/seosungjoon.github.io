@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-08T18:27:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SungJoon’s Portfolio</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">세종창의학기제 Ⅲ,Ⅳ</title><link href="http://localhost:4000/project/2019/09/06/BookPrice/" rel="alternate" type="text/html" title="세종창의학기제 Ⅲ,Ⅳ" /><published>2019-09-06T21:10:00+09:00</published><updated>2019-09-06T21:10:00+09:00</updated><id>http://localhost:4000/project/2019/09/06/BookPrice</id><content type="html" xml:base="http://localhost:4000/project/2019/09/06/BookPrice/">&lt;p&gt;머신러닝을 통한 중고책 거래가 자동측정 모듈 구축&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-08T18:53:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SungJoon’s Portfolio</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">세종창의학기제 Ⅲ,Ⅳ</title><link href="http://localhost:4000/project/2019/09/06/BookPrice/" rel="alternate" type="text/html" title="세종창의학기제 Ⅲ,Ⅳ" /><published>2019-09-06T21:10:00+09:00</published><updated>2019-09-06T21:10:00+09:00</updated><id>http://localhost:4000/project/2019/09/06/BookPrice</id><content type="html" xml:base="http://localhost:4000/project/2019/09/06/BookPrice/">&lt;p&gt;머신러닝을 통한 중고책 거래가 자동측정 모듈 구축&lt;/p&gt;
 
 &lt;h2 id=&quot;member&quot;&gt;Member&lt;/h2&gt;
 
@@ -105,7 +105,7 @@
 
 &lt;h2 id=&quot;3-시스템구성도&quot;&gt;3. 시스템구성도&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/project/BookPrice/sysarch.PNG&quot; alt=&quot;시스템구성도1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/project/BookPrice/sysarch.png&quot; alt=&quot;시스템구성도1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;우선 통신은 모두 http통신으로 이루어지고 사용자는 책에 대한 상태를 체크하고 사진을 찍습니다.&lt;br /&gt;
 머신러닝을 통해서 책인지 아닌지를 판별하고 책일 경우에는 책의 제목을 추출해서 서버로 보내줍니다.&lt;br /&gt;
@@ -465,13 +465,13 @@ LABEL_DETECTION에서 BOOK이라고 판별했을 경우, TEXT_DETECTION 수행�
 
 &lt;h2 id=&quot;성과&quot;&gt;성과&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/project/BookPrice/awards.PNG&quot; alt=&quot;성과&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/project/BookPrice/awards.png&quot; alt=&quot;성과&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;해당 모듈은 세종대학교 7회 창의설계경진대회에서 최우수상을 수상하였습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://github.com/seosungjoon/BookPrice&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://github.com/ehaken95/BookPrice&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;Android Source 바로가기&lt;/u&gt;&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -869,7 +869,7 @@ $ pm2 start app.js&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 
 &lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://github.com/seosungjoon/ClassicBook&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://github.com/ehaken95/ClassicBook&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;Android Source 바로가기&lt;/u&gt;&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -1123,7 +1123,7 @@ VR기술을 이용하여 3D로 표현된 한반도 지형을 좀 더세밀하게
 &lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;a href=&quot;https://github.com/seosungjoon/Center_Android&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://github.com/ehaken95/Center_Android&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;Android Source 바로가기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1144,8 +1144,8 @@ VR기술을 이용하여 3D로 표현된 한반도 지형을 좀 더세밀하게
 
 &lt;p&gt;위치값과 지도 정보를 활용하여 사용자에게 보여주는 어플리케이션입니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://seosungjoon.github.io/project/2019/09/06/GISApp/&quot; style=&quot;color: #5779ff&quot;&gt;
-&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/seosungjoon/Center_Android&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ehaken95.github.io/project/2019/09/06/GISApp/&quot; style=&quot;color: #5779ff&quot;&gt;
+&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/ehaken95/Center_Android&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;소스보러가기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;이를 통해 외부 API를 사용하는 방법과 GPS, JSON파싱을 통한 지하철 검색 시스템을 구현할 수 있습니다.&lt;/p&gt;
@@ -1158,8 +1158,8 @@ VR기술을 이용하여 3D로 표현된 한반도 지형을 좀 더세밀하게
 
 &lt;p&gt;자체 Linux 서버를 이용하여 클라이언트-서버 구조를 통해 서버와의 통신기술을 익혔습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://seosungjoon.github.io/project/2019/09/06/BookPrice/&quot; style=&quot;color: #5779ff&quot;&gt;
-&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/seosungjoon/BookPrice&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ehaken95.github.io/project/2019/09/06/BookPrice/&quot; style=&quot;color: #5779ff&quot;&gt;
+&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/ehaken95/BookPrice&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;소스보러가기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;이를 통해 서버-클라이언트 구조를 이해하고, 활용할 수 있으며,&lt;/p&gt;
@@ -1175,8 +1175,8 @@ VR기술을 이용하여 3D로 표현된 한반도 지형을 좀 더세밀하게
 
 &lt;p&gt;주로 서버-클라이언트 통신을 통해 데이터를 파싱, 로그인 기능을 구현하였습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://seosungjoon.github.io/project/2019/09/06/ClassicBook/&quot; style=&quot;color: #5779ff&quot;&gt;
-&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/seosungjoon/ClassicBook&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ehaken95.github.io/project/2019/09/06/ClassicBook/&quot; style=&quot;color: #5779ff&quot;&gt;
+&lt;u&gt;프로젝트설명보러가기&lt;/u&gt;&lt;/a&gt; / &lt;a href=&quot;https://github.com/ehaken95/ClassicBook&quot; style=&quot;color: #5779ff&quot; target=&quot;_blank&quot;&gt;
 &lt;u&gt;소스보러가기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;이를 통해 JSOUP를 통한 HTML 파싱을 할 수 있으며, GSON을 이용하여&lt;/p&gt;
@@ -1260,12 +1260,12 @@ VR기술을 이용하여 3D로 표현된 한반도 지형을 좀 더세밀하게
 
 &lt;p&gt;학교 내에서 진행하는 프로젝트나 대회 등을 나가 수상하였습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://seosungjoon.github.io/category/project/&quot; style=&quot;color: #5779ff&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ehaken95.github.io/category/project/&quot; style=&quot;color: #5779ff&quot;&gt;
 &lt;u&gt;프로젝트보기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;안드로이드 관련 내용은 별도의 페이지로 후술하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://seosungjoon.github.io/skills/2019/09/05/Android/&quot; style=&quot;color: #5779ff&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://ehaken95.github.io/skills/2019/09/05/Android/&quot; style=&quot;color: #5779ff&quot;&gt;
 &lt;u&gt;자세히보러가기&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="skills" /><summary type="html">자바는 고등학교 시절부터 가장 흥미를 가지고 있었고 Android개발이라는 것을 알려준 프로그래밍 언어입니다.</summary></entry><entry><title type="html">C,C++,C#</title><link href="http://localhost:4000/skills/2019/09/05/C,C++,C/" rel="alternate" type="text/html" title="C,C++,C#" /><published>2019-09-05T13:08:12+09:00</published><updated>2019-09-05T13:08:12+09:00</updated><id>http://localhost:4000/skills/2019/09/05/C,C++,C</id><content type="html" xml:base="http://localhost:4000/skills/2019/09/05/C,C++,C/">&lt;p&gt;C언어는 제가 컴퓨터공학과에 처음 입문했을 당시부터 배웠던 프로그래밍 언어입니다.&lt;/p&gt;
 
 &lt;p&gt;C를 통해 프로그래밍 언어에 대한 기반을 다지며,&lt;/p&gt;

@@ -1,11 +1,11 @@
 # My Portfolio Page
 
-환영합니다! seosungjoon의 포트폴리오를 만나보세요!
+환영합니다! ehaken95의 포트폴리오를 만나보세요!
 
 ---
 
-Welcome! See the seosungjoon's developer portfolio!
+Welcome! See the ehaken95's developer portfolio!
 
-https://seosungjoon.github.io/
+https://ehaken95.github.io/
 
 

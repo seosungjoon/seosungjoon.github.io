@@ -259,7 +259,7 @@ $ pm2 start app.js
 
 ### Contact
 <br>
-<a href="https://github.com/seosungjoon/ClassicBook"  style="color: #5779ff" target="_blank">
+<a href="https://github.com/ehaken95/ClassicBook"  style="color: #5779ff" target="_blank">
 <U>Android Source 바로가기</U></a>
 <br>
 <br>

@@ -339,7 +339,7 @@ protected void onPostExecute(String result) {
 
 ### Contact
 <br>
-<a href="https://github.com/seosungjoon/BookPrice"  style="color: #5779ff" target="_blank">
+<a href="https://github.com/ehaken95/BookPrice"  style="color: #5779ff" target="_blank">
 <U>Android Source 바로가기</U></a>
 <br>
 <br>
