@@ -90,6 +90,8 @@ SharedPreferences를 이용하여 자동로그인을 구현하였습니다. 본 
 
 
 {% highlight java linenos %}
+//LoginActivity.java
+
 //자동로그인 정보 저장
 SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 String auID = pref.getString("ID","null");
@@ -110,9 +112,12 @@ if(pref.getString("auto_login","0").equals("1")){
 자동로그인 체크박스에 체크를 하고 로그인 시도를 하게 되면 로그인을 시도한 시점의 ID와 PW를 저장합니다.
 이후 어플리케이션 재실행 시 자동로그인을 시도한 기록이 있기 때문에 이전 로그인했던 ID와 PW를 불러와 자동으로 로그인을 시도합니다.
 
-로그인을 하는 과정은 서버와 비동기 통신을 해야 하는 과정이기 때문에 AsyncTask를 사용하였습니다.
-
+로그인을 하는 과정은 서버와 비동기 통신을 해야 하는 과정이기 때문에 AsyncTask를 사용하였습니다.<br>
+<br>
+<br>
 {% highlight java linenos %}
+//LoginActivity.java
+
 public class LoginTask extends AsyncTask<String, Void, String>{
     SweetAlertDialog pDialog = new SweetAlertDialog(LoginActivity.this,SweetAlertDialog.PROGRESS_TYPE);
     private String url;
@@ -177,13 +182,191 @@ public class LoginTask extends AsyncTask<String, Void, String>{
 }
 {% endhighlight %}
 
-로그인성공 후 서버에서 파싱해온 고전독서 인증정보들은 전역 클래스에 별도로 저장됩니다. 이 데이터들은 어플리케이션 종료 시 삭제됩니다.
+로그인성공 후 서버에서 파싱해온 고전독서 인증정보들은 전역 클래스에 별도로 저장됩니다. 이 데이터들은 어플리케이션 종료 시 삭제됩니다.<br>
+<br>
+<br>
+## JSON 파싱
 
+서버에서 전송받는 데이터는 JSON형태로 이루어 집니다. 해당 데이터들을 안드로이드에서 사용할 수 있도록 JSON파싱 기능을 구현하였습니다.
+
+{% highlight java linenos %}
+//JSONParser.java
+
+
+public class JSONParser extends Application {
+
+    public String stat;//status 0 -> 로긴 실패 status 1 ->로긴 성공
+    public String major;//학과
+    public String stu_num;//학번
+    public String stu_name;//이름
+
+    public JsonArray stat_auth;//인증현황
+    public String stat_auth_seo;//서양 -> ~권
+    public String stat_auth_dong;//동양
+    public String stat_auth_dongseo;//동서양
+    public String stat_auth_science;//과학
+    public String stat_auth_tot;//합계
+
+    public JsonArray stat_test_auth;//시험인증현황
+
+    public JsonArray stat_alter_auth;//대체과목현황
+
+    public JsonArray stat_challenge_auth;//대회인증현황
+
+
+    //-------------------getter-------------------//
+    ...
+    //--------------------setter------------------//
+    ...
+{% endhighlight %}
+JSON파싱 전역 클래스를 생성하여 해당 정보들을 저장할 수 있도록 하였습니다.<br>
+<br>
+<br>
+{% highlight java linenos %}
+//LoginActivity.java
+
+//파싱
+try {
+    JsonParser Parser = new JsonParser();
+    JsonObject jsonObj = (JsonObject) Parser.parse(result);
+    //전역변수에 저장선언
+    JSONParser jsglobal = (JSONParser)getApplicationContext();
+
+    jsglobal.setStat(jsonObj.get("status").getAsString());
+    jsglobal.setMajor(jsonObj.get("학과").getAsString());
+    jsglobal.setStu_num(jsonObj.get("학번").getAsString());
+    jsglobal.setStu_name(jsonObj.get("이름").getAsString());
+
+    jsglobal.setStat_auth((JsonArray) jsonObj.get("인증현황"));
+
+    for(int i = 0;i<jsglobal.getStat_auth().size();i++){
+        JsonObject object = (JsonObject)jsglobal.getStat_auth().get(i);
+        jsglobal.setStat_auth_seo(object.get("서양의 역사와 사상").getAsString());//서양 -> ~권
+        jsglobal.setStat_auth_dong(object.get("동양의 역사와 사상").getAsString());//동양 -> ~권
+        jsglobal.setStat_auth_dongseo(object.get("동서양의 문학").getAsString());//동서양
+        jsglobal.setStat_auth_science(object.get("과학 사상").getAsString());//과학
+        jsglobal.setStat_auth_tot(object.get("합계").getAsString());//합계
+    }
+
+    jsglobal.setStat_test_auth((JsonArray) jsonObj.get("시험인증현황"));
+    jsglobal.setStat_alter_auth((JsonArray) jsonObj.get("대체과목현황"));
+    jsglobal.setStat_challenge_auth((JsonArray) jsonObj.get("대회인증현황"));
+
+    if(jsglobal.getStat().equals("0")){
+        new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+                .setTitleText("오류")
+                .setContentText("ID와 PW를 확인해 주세요")
+                .show();
+        //               Toast.makeText(LoginActivity.this,"ID와 PW를 확인해 주세요",Toast.LENGTH_SHORT).show();
+
+    }else {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+}catch (NullPointerException e){
+    new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("오류")
+            .setContentText("서버와의 통신이 원활하지 않습니다. \n다시 시도해 주세요")
+            .show();
+}
+
+{% endhighlight %}
+최초 로그인 시 해당 정보들을 JSON 전역 클래스에 저장하였습니다.<br>
+<br>
+<br>
+
+
+{% highlight java linenos %}
+//Main1_Detail.java
+
+JSONParser js = (JSONParser)this.getApplicationContext();
+
+JsonArray testAuthArray = js.getStat_test_auth();
+JsonArray alterAuthArray = js.getStat_alter_auth();
+JsonArray chalAuthArray=js.getStat_challenge_auth();
+
+List<String> listHakgi = new ArrayList<>();
+List<String> listCat = new ArrayList<>();
+List<String> listTitle = new ArrayList<>();
+List<String> listDate = new ArrayList<>();
+List<String> listScore = new ArrayList<>();
+List<String> listIspass = new ArrayList<>();
+
+List<String> list_alHakgi = new ArrayList<>();
+List<String> list_alCourse = new ArrayList<>();
+List<String> list_alCat = new ArrayList<>();
+List<String> list_alTitle = new ArrayList<>();
+List<String> list_alPass = new ArrayList<>();
+
+List<String> list_chHakgi = new ArrayList<>();
+List<String> list_chname = new ArrayList<>();
+List<String> list_chCat = new ArrayList<>();
+List<String> list_chTitle = new ArrayList<>();
+
+{% endhighlight %}
+저장된 정보들을 사용할 때 전역클래스를 호출하여 List에 저장한 뒤 사용하였습니다.
+<br>
+<br>
+<br>
+
+## JSOUP
+
+학교 도서관 홈페이지를 통하여 도서를 검색한 후, 사용자에게 위치, 대출가능 여부를 알려주기 위해 JSOUP를 통해 HTML를 파싱하였습니다.
+
+{% highlight java linenos %}
+//Menu3_searchLibrary.java
+
+protected Void doInBackground(Void... params){
+    try{
+        Document doc = Jsoup.connect(URL).get();
+        //해당 도서 id태그 파싱
+        element = doc.select("div.previewListViewHolder");
+        String getallid = element.attr("id");
+        findURLADDID = getallid.replace("rel_","");
+        finURL = finURL+findURLADDID;
+
+        Document doc2 = Jsoup.connect(finURL).get();
+        //도서 진짜 대출목록 파싱
+        element = doc2.select("tbody");
+
+        //도서 tbody에서 td태그만 추출
+        Elements div = element.select("td");
+
+        int j =0;
+        for(int i=0;i<div.size();i++){
+            switch(i%7){
+                case 2: listStringloc.add(div.get(i).ownText()); break;
+                case 3: listStringnum.add(div.get(i).ownText()); break;
+                case 4: listStringrent.add(div.get(i).ownText()); break;
+                case 5: listStringdate.add(div.get(i).ownText()); break;
+            }
+            j++;
+        }
+    }catch (IOException e){
+        e.printStackTrace();
+    }
+    return null;
+}
+{% endhighlight %}
+
+<br>
+<br>
+<br>
+
+{% highlight java linenos %}
+
+{% endhighlight %}
 ## RecyclerView
 
 안드로이드 UI구성은 BottomNavigationView로 구성되었으며, 각각의 Fragment에 RecyclerView를 동적으로 적용하여 스크롤이 가능하도록 하였습니다.
 
+-WHY RecyclerView?<br>
+RecyclerView는 ListView보다 향상된 성능을 제공하는데 RecyclerView란 이름에서도 알 수 있듯이 Adapter의 ViewHolder를 이용하여 RecyclerView 내의 View를 재활용하여 사용합니다. 커스터마이징 하기에도 훨씬 좋아졌고 LayoutManager를 이용하여 ListView와 GridView를 표현할 수 있습니다.
+
 {% highlight java linenos %}
+//RecyclerAdapter_Setting.java
+
 public class RecyclerAdapter_Setting extends RecyclerView.Adapter<RecyclerAdapter_Setting.ItemViewHolder> {
 
     // adapter에 들어갈 list
@@ -216,6 +399,8 @@ public class RecyclerAdapter_Setting extends RecyclerView.Adapter<RecyclerAdapte
     }
 }
 {% endhighlight %}
+<br>
+<br>
 
 ## Alarm (with Oreo)
 
@@ -224,6 +409,8 @@ public class RecyclerAdapter_Setting extends RecyclerView.Adapter<RecyclerAdapte
 안드로이드 OS 8.0부터는 별도의 Notification Channel을 만들어주어야 하며 createNotificationChannel()을 호출해주면 됩니다. 
 
 {% highlight java linenos %}
+//BroadcastD.java
+
 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
     int importance = NotificationManager.IMPORTANCE_HIGH;
     NotificationChannel notificationChannel = new NotificationChannel(channelId, channelName, importance);
@@ -232,6 +419,8 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 {% endhighlight %}
 
 이렇게 설정해 두면 선택한 시간에 상단바 Notification이 울립니다.
+<br>
+<br>
 
 ## AWS
 
@@ -256,6 +445,8 @@ $ forever start app.js
 $ npm install pm2 -g
 $ pm2 start app.js
 {% endhighlight %}
+<br>
+<br>
 
 ### Contact
 <br>

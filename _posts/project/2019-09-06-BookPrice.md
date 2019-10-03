@@ -96,7 +96,7 @@ Java / Swift / Javascript | Raspberry PI 3B / Node.js / Express.js | MySQL
 우리의 본 알고리즘(UP Algoritm)이 효율적이라는 것을 대립가설이라 하고, 이 가설에 우리가 조사한 3000개의 표본을 R을 이용하여 가설검정을 시행하였다. <br>
 3천개의 난수를 생성하여 X에 대한 95%신뢰구간을 구하는 작업을 100번 반복했을때, 100개의 신뢰구간 가운데 참값을 가지는 표본(대립가설을 만족하는 표본)을 포함하고 있는 것의 비율은 96%정도로, 반복시행 하였을때 95% 근방의 값을 가짐을 구할 수 있었다.
 
-### 예시
+### 시연 예시
 <br>
 <br>
 
@@ -113,12 +113,15 @@ Java / Swift / Javascript | Raspberry PI 3B / Node.js / Express.js | MySQL
 
 모든 기능이 작동하기 위한 전제인 사진촬영 및 사진 가져오기 기능이다. 본 기능은 카메라, 저장소 권한을 불러와야 하기 때문에, <br>
 {% highlight java linenos %}
+//AndroidManifest.xml
+
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.CAMERA"/>
 {% endhighlight %}
-권한을 추가해 준다.<br>
-또한, AOS 6.0 이상 버전부터 사용자에게 권한을 다시 한번 물어야 하기 때문에, PermissionUtils.java 파일을 생성 후, 권한을 사용자에게 물어주는 코드를 작성한다. 그 후, 카메라 및 갤러리를 최초 작동할 때 사용자에게 권한을 묻는다.<br>
-화면 UI 하단의 fab 아이콘을 클릭하면, 카메라를 실행할 수 있다. <br>
+권한을 추가해 줍니다.<br>
+또한, AOS 6.0 이상 버전부터 사용자에게 권한을 다시 한번 물어야 하기 때문에, PermissionUtils.java 파일을 생성 후, 권한을 사용자에게 물어주는 코드를 작성한다. 그 후, 카메라 및 갤러리를 최초 작동할 때 사용자에게 권한을 묻습니다.<br>
+화면 UI 하단의 fab 아이콘을 클릭하면, 카메라를 실행할 수 있습니다. <br>
+<br>
 
 {% highlight java linenos %}
 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -127,29 +130,32 @@ intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 startActivityForResult(intent, CAMERA_IMAGE_REQUEST);
 {% endhighlight %}
-<br>
 
-이렇게 하면 카메라로 촬영한 결과가 onActivityResult로 넘어간다. 여기서 서버전송 및 화면에 출력하기 위해 bitmap으로 변환해야 한다.<br>
-이렇게 변환된 이미지를 화면에 띄웠는데 자꾸만 90도 회전된 상태로 띄워지게 되는 현상이 발생하였다. <br>
+이렇게 하면 카메라로 촬영한 결과가 onActivityResult로 넘어갑니다. 여기서 서버전송 및 화면에 출력하기 위해 bitmap으로 변환해야 합니다.<br>
+이렇게 변환된 이미지를 화면에 띄웠는데 자꾸만 90도 회전된 상태로 띄워지게 되는 현상이 발생하였습니다. <br>
 따라서 <br>
+<br>
 {% highlight java linenos %}
+//MainActivity.java
+
 if (exif != null) {
 exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
 exifDegree = exifOrientationToDegrees(exifOrientation);} else {exifDegree = 0;
 {% endhighlight %}
+이러한 방식으로 이미지를 90도 회전시켜 출력할 수 있게 설정하였습니다.<br>
+본 현상은 이미지뷰 레이아웃의 정해진 크기 때문에 클라이언트가 자체적으로 크기를 최대한 CenterCrop하기 위하여 회전하여 맞추어 지기 때문에 발생됩니다.<br>
+스마트폰은 가로가 세로보다 짧지만, 이미지뷰의 크기는 가로가 세로보다 길기 때문에 자꾸만 회전되어 출력되는 현상입니다.<br>
 <br>
-
-이러한 방식으로 이미지를 90도 회전시켜 출력할 수 있게 설정하였다.<br>
-본 현상은 이미지뷰 레이아웃의 정해진 크기 때문에 클라이언트가 자체적으로 크기를 최대한 CenterCrop하기 위하여 회전하여 맞추는 것이다.<br>
-스마트폰은 가로가 세로보다 짧지만, 이미지뷰의 크기는 가로가 세로보다 길기 때문에 자꾸만 회전되어 출력되는 현상이다.<br>
 
 ## 서버-어플리케이션 간 HTTP 통신
 
-http 통신은 RequestHttpURLConnection을 통하여 연결하거나, okHttp 라이브러리를 사용하여 연결이 가능하다.<br>
-라이브러리를 사용하는 것 보다는, 처음 HTTP통신을 시도해 보는 것이기 때문에 안드로이드 기본 제공 메소드를 통해 구현하기로 하였다.<br>
-우선 Http통신을 관리해 줄 RequestHttpURLConnection.java를 따로 생성한다.<br>
+http 통신은 RequestHttpURLConnection을 통하여 연결하거나, okHttp 라이브러리를 사용하여 연결이 가능합니다.<br>
+라이브러리를 사용하는 것 보다는, 처음 HTTP통신을 시도해 보는 것이기 때문에 안드로이드 기본 제공 메소드를 통해 구현하기로 하였습니다.<br>
+우선 Http통신을 관리해 줄 RequestHttpURLConnection.java를 따로 생성합니다.<br>
 
 {% highlight java linenos %}
+//RequestHttpURLConnection.java
+
 public class RequestHttpURLConnection {
     public String request(String _url, ContentValues _params) {
         // HttpURLConnection 참조 변수.
@@ -231,13 +237,16 @@ public class RequestHttpURLConnection {
 }
 {% endhighlight %}
 
-그리고 그 안에 URL과 URL뒤에 붙여서 보낼 파라미터를 생성하고, POST요청 및 응답된 파라미터 값을 string으로 저장해준다.<br>
+그리고 그 안에 URL과 URL뒤에 붙여서 보낼 파라미터를 생성하고, POST요청 및 응답된 파라미터 값을 string으로 저장해줍니다.<br>
 이렇게 생성을 완료하였으면 MainActivity에서 HTTP통신을 원하는 부분에<br>
 RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();<br>
-result = requestHttpURLConnection.request(turl, values);를 추가해 주면, resutl의 String갑으로 URL응답이 넘어오게 된다.<br>
-HTTP통신은 비동기 작업으로 처리해야 하며, 이는 AsyncTask의 doInBackground메소드에서 처리해야 한다.<br>
+result = requestHttpURLConnection.request(turl, values);를 추가해 주면, resutl의 String값으로 URL응답이 넘어오게 됩니다.<br>
+HTTP통신은 비동기 작업으로 처리해야 하며, 이는 AsyncTask의 doInBackground메소드에서 처리해야 함을 의미합니다.<br>
+<br>
 
 {% highlight java linenos %}
+//MainActivity.java
+
 public class NetworkTask extends AsyncTask<String, Void, String>{
 ...
 @Override
@@ -248,12 +257,14 @@ protected String doInBackground(String... params){ //HTTP통신부 }
 protected void onPostExecute(String s){ ... }
 ...}
 {% endhighlight %}
+<br>
+<br>
 
 ## Google Cloud Vision API
 
 구글 Cloud Vision API은 이미지에서 얼굴인식, 랜드마크탐지, 사물감지, 텍스트 인식, 로고, 부적절한 이미지 감지 등 다양한 기능이 있습니다.
 
-자세한 내용은 구글 클라우드 플렛폼 내의 클라우드비전을 참고해주세요!!
+자세한 내용은 구글 클라우드 플랫폼 내의 클라우드비전을 참고해주세요!!
 
 <https://cloud.google.com/vision/>
 
@@ -262,6 +273,8 @@ protected void onPostExecute(String s){ ... }
 해당 클라우드 메소드 중, callCloudVision 메소드 안에
 
 {% highlight java linenos %}
+//MainActivity.java
+
 annotateImageRequest.setFeatures(new ArrayList<feature>(){
     { 
         Feature labelDetection = new Feature();
@@ -278,8 +291,11 @@ LABEL 뿐만아니라 텍스트, 랜드마크, 로고 등 여러가지 키워드
 
 구글 클라우드 비전API의 작동 순서는
 LABEL_DETECTION에서 BOOK이라고 판별했을 경우, TEXT_DETECTION 수행해야 하기 때문에,
-
+<br>
+<br>
 {% highlight java linenos %}
+//MainActivity.java
+
 try {
         if(selectMode==1) {//책 판별
             AsyncTask<Object, Void, String> labelDetectionTask = new LableDetectionTask(this, prepareAnnotationRequest(bitmap));
@@ -297,7 +313,8 @@ try {
 로 두어 기능이 변경되도록 설정하였습니다.
 
 또한, 판별된 텍스트를 사용자에게 보여주기 위해 
-
+<br>
+<br>
 {% highlight java linenos %}
 protected void onPostExecute(String result) {
                 mBookTitle.getText().toString()
@@ -305,6 +322,8 @@ protected void onPostExecute(String result) {
 {% endhighlight %}
 
 을 사용하여 AlertDialog에 표시되도록 설정하였습니다.
+<br>
+<br>
 
 ### 문제점 및 해결 방안
 

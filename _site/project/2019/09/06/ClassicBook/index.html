@@ -197,7 +197,11 @@
 13
 14
 15
-</pre></td><td class="code"><pre><span class="c1">//자동로그인 정보 저장</span>
+16
+17
+</pre></td><td class="code"><pre><span class="c1">//LoginActivity.java</span>
+
+<span class="c1">//자동로그인 정보 저장</span>
 <span class="n">SharedPreferences</span> <span class="n">pref</span> <span class="o">=</span> <span class="n">PreferenceManager</span><span class="o">.</span><span class="na">getDefaultSharedPreferences</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 <span class="n">String</span> <span class="n">auID</span> <span class="o">=</span> <span class="n">pref</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"ID"</span><span class="o">,</span><span class="s">"null"</span><span class="o">);</span>
 <span class="n">String</span> <span class="n">auPW</span> <span class="o">=</span> <span class="n">pref</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"PW"</span><span class="o">,</span><span class="s">"null"</span><span class="o">);</span>
@@ -216,7 +220,9 @@
 <p>자동로그인 체크박스에 체크를 하고 로그인 시도를 하게 되면 로그인을 시도한 시점의 ID와 PW를 저장합니다.
 이후 어플리케이션 재실행 시 자동로그인을 시도한 기록이 있기 때문에 이전 로그인했던 ID와 PW를 불러와 자동으로 로그인을 시도합니다.</p>
 
-<p>로그인을 하는 과정은 서버와 비동기 통신을 해야 하는 과정이기 때문에 AsyncTask를 사용하였습니다.</p>
+<p>로그인을 하는 과정은 서버와 비동기 통신을 해야 하는 과정이기 때문에 AsyncTask를 사용하였습니다.<br />
+<br />
+<br /></p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -280,7 +286,11 @@
 60
 61
 62
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;{</span>
+63
+64
+</pre></td><td class="code"><pre><span class="c1">//LoginActivity.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;{</span>
     <span class="n">SweetAlertDialog</span> <span class="n">pDialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span><span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">PROGRESS_TYPE</span><span class="o">);</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">ContentValues</span> <span class="n">values</span><span class="o">;</span>
@@ -343,11 +353,73 @@
     <span class="o">}</span>
 <span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>로그인성공 후 서버에서 파싱해온 고전독서 인증정보들은 전역 클래스에 별도로 저장됩니다. 이 데이터들은 어플리케이션 종료 시 삭제됩니다.</p>
+<p>로그인성공 후 서버에서 파싱해온 고전독서 인증정보들은 전역 클래스에 별도로 저장됩니다. 이 데이터들은 어플리케이션 종료 시 삭제됩니다.<br />
+<br />
+<br /></p>
+<h2 id="json-파싱">JSON 파싱</h2>
 
-<h2 id="recyclerview">RecyclerView</h2>
+<p>서버에서 전송받는 데이터는 JSON형태로 이루어 집니다. 해당 데이터들을 안드로이드에서 사용할 수 있도록 JSON파싱 기능을 구현하였습니다.</p>
 
-<p>안드로이드 UI구성은 BottomNavigationView로 구성되었으며, 각각의 Fragment에 RecyclerView를 동적으로 적용하여 스크롤이 가능하도록 하였습니다.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="code"><pre><span class="c1">//JSONParser.java</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JSONParser</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat</span><span class="o">;</span><span class="c1">//status 0 -&gt; 로긴 실패 status 1 -&gt;로긴 성공</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">major</span><span class="o">;</span><span class="c1">//학과</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stu_num</span><span class="o">;</span><span class="c1">//학번</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stu_name</span><span class="o">;</span><span class="c1">//이름</span>
+
+    <span class="kd">public</span> <span class="n">JsonArray</span> <span class="n">stat_auth</span><span class="o">;</span><span class="c1">//인증현황</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat_auth_seo</span><span class="o">;</span><span class="c1">//서양 -&gt; ~권</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat_auth_dong</span><span class="o">;</span><span class="c1">//동양</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat_auth_dongseo</span><span class="o">;</span><span class="c1">//동서양</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat_auth_science</span><span class="o">;</span><span class="c1">//과학</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">stat_auth_tot</span><span class="o">;</span><span class="c1">//합계</span>
+
+    <span class="kd">public</span> <span class="n">JsonArray</span> <span class="n">stat_test_auth</span><span class="o">;</span><span class="c1">//시험인증현황</span>
+
+    <span class="kd">public</span> <span class="n">JsonArray</span> <span class="n">stat_alter_auth</span><span class="o">;</span><span class="c1">//대체과목현황</span>
+
+    <span class="kd">public</span> <span class="n">JsonArray</span> <span class="n">stat_challenge_auth</span><span class="o">;</span><span class="c1">//대회인증현황</span>
+
+
+    <span class="c1">//-------------------getter-------------------//</span>
+    <span class="o">...</span>
+    <span class="c1">//--------------------setter------------------//</span>
+    <span class="o">...</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>JSON파싱 전역 클래스를 생성하여 해당 정보들을 저장할 수 있도록 하였습니다.<br />
+<br />
+<br /></p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -380,7 +452,248 @@
 29
 30
 31
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RecyclerAdapter_Setting</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">RecyclerAdapter_Setting</span><span class="o">.</span><span class="na">ItemViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="code"><pre><span class="c1">//LoginActivity.java</span>
+
+<span class="c1">//파싱</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">JsonParser</span> <span class="n">Parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonParser</span><span class="o">();</span>
+    <span class="n">JsonObject</span> <span class="n">jsonObj</span> <span class="o">=</span> <span class="o">(</span><span class="n">JsonObject</span><span class="o">)</span> <span class="n">Parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+    <span class="c1">//전역변수에 저장선언</span>
+    <span class="n">JSONParser</span> <span class="n">jsglobal</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONParser</span><span class="o">)</span><span class="n">getApplicationContext</span><span class="o">();</span>
+
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat</span><span class="o">(</span><span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"status"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span>
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setMajor</span><span class="o">(</span><span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"학과"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span>
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStu_num</span><span class="o">(</span><span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"학번"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span>
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStu_name</span><span class="o">(</span><span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"이름"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span>
+
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth</span><span class="o">((</span><span class="n">JsonArray</span><span class="o">)</span> <span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"인증현황"</span><span class="o">));</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat_auth</span><span class="o">().</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+        <span class="n">JsonObject</span> <span class="n">object</span> <span class="o">=</span> <span class="o">(</span><span class="n">JsonObject</span><span class="o">)</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat_auth</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth_seo</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"서양의 역사와 사상"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span><span class="c1">//서양 -&gt; ~권</span>
+        <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth_dong</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"동양의 역사와 사상"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span><span class="c1">//동양 -&gt; ~권</span>
+        <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth_dongseo</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"동서양의 문학"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span><span class="c1">//동서양</span>
+        <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth_science</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"과학 사상"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span><span class="c1">//과학</span>
+        <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_auth_tot</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"합계"</span><span class="o">).</span><span class="na">getAsString</span><span class="o">());</span><span class="c1">//합계</span>
+    <span class="o">}</span>
+
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_test_auth</span><span class="o">((</span><span class="n">JsonArray</span><span class="o">)</span> <span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"시험인증현황"</span><span class="o">));</span>
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_alter_auth</span><span class="o">((</span><span class="n">JsonArray</span><span class="o">)</span> <span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"대체과목현황"</span><span class="o">));</span>
+    <span class="n">jsglobal</span><span class="o">.</span><span class="na">setStat_challenge_auth</span><span class="o">((</span><span class="n">JsonArray</span><span class="o">)</span> <span class="n">jsonObj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"대회인증현황"</span><span class="o">));</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="n">jsglobal</span><span class="o">.</span><span class="na">getStat</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"0"</span><span class="o">)){</span>
+        <span class="k">new</span> <span class="nf">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">ERROR_TYPE</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setTitleText</span><span class="o">(</span><span class="s">"오류"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"ID와 PW를 확인해 주세요"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+        <span class="c1">//               Toast.makeText(LoginActivity.this,"ID와 PW를 확인해 주세요",Toast.LENGTH_SHORT).show();</span>
+
+    <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+        <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+        <span class="n">finish</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">NullPointerException</span> <span class="n">e</span><span class="o">){</span>
+    <span class="k">new</span> <span class="nf">SweetAlertDialog</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">SweetAlertDialog</span><span class="o">.</span><span class="na">ERROR_TYPE</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setTitleText</span><span class="o">(</span><span class="s">"오류"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"서버와의 통신이 원활하지 않습니다. \n다시 시도해 주세요"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>최초 로그인 시 해당 정보들을 JSON 전역 클래스에 저장하였습니다.<br />
+<br />
+<br /></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="code"><pre><span class="c1">//Main1_Detail.java</span>
+
+<span class="n">JSONParser</span> <span class="n">js</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONParser</span><span class="o">)</span><span class="k">this</span><span class="o">.</span><span class="na">getApplicationContext</span><span class="o">();</span>
+
+<span class="n">JsonArray</span> <span class="n">testAuthArray</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="na">getStat_test_auth</span><span class="o">();</span>
+<span class="n">JsonArray</span> <span class="n">alterAuthArray</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="na">getStat_alter_auth</span><span class="o">();</span>
+<span class="n">JsonArray</span> <span class="n">chalAuthArray</span><span class="o">=</span><span class="n">js</span><span class="o">.</span><span class="na">getStat_challenge_auth</span><span class="o">();</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listHakgi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listCat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listTitle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listScore</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listIspass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_alHakgi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_alCourse</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_alCat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_alTitle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_alPass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_chHakgi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_chname</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_chCat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list_chTitle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>저장된 정보들을 사용할 때 전역클래스를 호출하여 List에 저장한 뒤 사용하였습니다.
+<br />
+<br />
+<br /></p>
+
+<h2 id="jsoup">JSOUP</h2>
+
+<p>학교 도서관 홈페이지를 통하여 도서를 검색한 후, 사용자에게 위치, 대출가능 여부를 알려주기 위해 JSOUP를 통해 HTML를 파싱하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="code"><pre><span class="c1">//Menu3_searchLibrary.java</span>
+
+<span class="kd">protected</span> <span class="n">Void</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">){</span>
+    <span class="k">try</span><span class="o">{</span>
+        <span class="n">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">URL</span><span class="o">).</span><span class="na">get</span><span class="o">();</span>
+        <span class="c1">//해당 도서 id태그 파싱</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="s">"div.previewListViewHolder"</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">getallid</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">"id"</span><span class="o">);</span>
+        <span class="n">findURLADDID</span> <span class="o">=</span> <span class="n">getallid</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"rel_"</span><span class="o">,</span><span class="s">""</span><span class="o">);</span>
+        <span class="n">finURL</span> <span class="o">=</span> <span class="n">finURL</span><span class="o">+</span><span class="n">findURLADDID</span><span class="o">;</span>
+
+        <span class="n">Document</span> <span class="n">doc2</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">finURL</span><span class="o">).</span><span class="na">get</span><span class="o">();</span>
+        <span class="c1">//도서 진짜 대출목록 파싱</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="n">doc2</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="s">"tbody"</span><span class="o">);</span>
+
+        <span class="c1">//도서 tbody에서 td태그만 추출</span>
+        <span class="n">Elements</span> <span class="n">div</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="s">"td"</span><span class="o">);</span>
+
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">div</span><span class="o">.</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+            <span class="k">switch</span><span class="o">(</span><span class="n">i</span><span class="o">%</span><span class="mi">7</span><span class="o">){</span>
+                <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="n">listStringloc</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">div</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">ownText</span><span class="o">());</span> <span class="k">break</span><span class="o">;</span>
+                <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="n">listStringnum</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">div</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">ownText</span><span class="o">());</span> <span class="k">break</span><span class="o">;</span>
+                <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="n">listStringrent</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">div</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">ownText</span><span class="o">());</span> <span class="k">break</span><span class="o">;</span>
+                <span class="k">case</span> <span class="mi">5</span><span class="o">:</span> <span class="n">listStringdate</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">div</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">ownText</span><span class="o">());</span> <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">j</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">){</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="recyclerview">RecyclerView</h2>
+
+<p>안드로이드 UI구성은 BottomNavigationView로 구성되었으며, 각각의 Fragment에 RecyclerView를 동적으로 적용하여 스크롤이 가능하도록 하였습니다.</p>
+
+<p>-WHY RecyclerView?<br />
+RecyclerView는 ListView보다 향상된 성능을 제공하는데 RecyclerView란 이름에서도 알 수 있듯이 Adapter의 ViewHolder를 이용하여 RecyclerView 내의 View를 재활용하여 사용합니다. 커스터마이징 하기에도 훨씬 좋아졌고 LayoutManager를 이용하여 ListView와 GridView를 표현할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="code"><pre><span class="c1">//RecyclerAdapter_Setting.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RecyclerAdapter_Setting</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">RecyclerAdapter_Setting</span><span class="o">.</span><span class="na">ItemViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
 
     <span class="c1">// adapter에 들어갈 list</span>
     <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Data_Recycle_Setting</span><span class="o">&gt;</span> <span class="n">listData1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
@@ -412,6 +725,9 @@
     <span class="o">}</span>
 <span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
+<p><br />
+<br /></p>
+
 <h2 id="alarm-with-oreo">Alarm (with Oreo)</h2>
 
 <p>안드로이드 버전이 8.0으로 넘어가면서, 기존 사용하던 기타 여러 가지 기능들이 더이상 사용할 수 없거나, 다른 방법을 찾아야 하는 경우가 생겼습니다. 그 중 알람기능인 Notification Channel 에 대한 대응책을 마련해야 하는 상황이었습니다.</p>
@@ -423,13 +739,19 @@
 3
 4
 5
-</pre></td><td class="code"><pre><span class="k">if</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="o">.</span><span class="na">VERSION_CODES</span><span class="o">.</span><span class="na">O</span><span class="o">){</span>
+6
+7
+</pre></td><td class="code"><pre><span class="c1">//BroadcastD.java</span>
+
+<span class="k">if</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="o">.</span><span class="na">VERSION_CODES</span><span class="o">.</span><span class="na">O</span><span class="o">){</span>
     <span class="kt">int</span> <span class="n">importance</span> <span class="o">=</span> <span class="n">NotificationManager</span><span class="o">.</span><span class="na">IMPORTANCE_HIGH</span><span class="o">;</span>
     <span class="n">NotificationChannel</span> <span class="n">notificationChannel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NotificationChannel</span><span class="o">(</span><span class="n">channelId</span><span class="o">,</span> <span class="n">channelName</span><span class="o">,</span> <span class="n">importance</span><span class="o">);</span>
     <span class="n">notificationManager</span><span class="o">.</span><span class="na">createNotificationChannel</span><span class="o">(</span><span class="n">notificationChannel</span><span class="o">);</span>
 <span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>이렇게 설정해 두면 선택한 시간에 상단바 Notification이 울립니다.</p>
+<p>이렇게 설정해 두면 선택한 시간에 상단바 Notification이 울립니다.
+<br />
+<br /></p>
 
 <h2 id="aws">AWS</h2>
 
@@ -454,6 +776,9 @@ $ forever start app.js</pre></td></tr></tbody></table></code></pre></figure>
 2
 </pre></td><td class="code"><pre>$ npm install pm2 -g
 $ pm2 start app.js</pre></td></tr></tbody></table></code></pre></figure>
+
+<p><br />
+<br /></p>
 
 <h3 id="contact">Contact</h3>
 <p><br />
