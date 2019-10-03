@@ -15,7 +15,7 @@ more_details: ["java", "android", "rbp", "linux", "git", "mysql", "nodejs"]
 이름 | 역할
 :--: | :--:
 서성준 | Android App 개발 & Raspberry 서버 구축
-남기범 | IOS App 개발 & Back-end 구축
+남기범 | Back-end 구축
 김신욱 | DB 구축 & Android App 개발
 유경수 | Back-end 구축
 
