@@ -14,13 +14,13 @@ education:
       average: 4.08
 
 certificate:
+  - name: 정보처리기사
+    acquisition_date: 2019.11.22
+    host: 한국산업인력공단
+
   - name: ITQ 정보기술자격(OA MASTER)
     acquisition_date: 2012.08.02
     host: 한국생산성본부
-
-  - name: 
-    acquisition_date: 
-    host: 
 
 prize:
   - name: 우수상
