@@ -7,10 +7,10 @@ education:
   - school: 세종
     academic: 대학교
     period: 2014.03~2020.02
-    status: 졸업예정
+    status: 졸업(공학인증 수료)
     major: 컴퓨터공학과
     credit:
-      total: 123
+      total: 130
       average: 4.08
 
 certificate:
