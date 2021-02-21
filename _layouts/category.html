@@ -51,6 +51,17 @@ layout: default
         </li>
       {% endfor %}
     </ul>
+    <h2 class="subtitle">경력 / Career</h2>
+    <ul class="cards">
+      {% for career in site.data.profile.career %}
+        <li class="card">
+          <h3>{{career.name}}</h3>
+          <p>근무기간 : {{career.work_start}} ~ {{career.work_end}} | 직급 : {{career.rank}}</p>
+          <p>직무 : {{career.job}}</p>
+          <p>사용 언어 : {{career.skill}}</p>
+        </li>
+      {% endfor %}
+    </ul>
     <h2 class="subtitle">자격증 / Certificate</h2>
       <ul class="cards">
       {% for cert in site.data.profile.certificate %}

@@ -13,6 +13,15 @@ education:
       total: 130
       average: 4.08
 
+career:
+  - name: 롯데정보통신
+    place : 서울
+    work_start : 2020.01.03
+    work_end : 
+    rank : 사원
+    job : Android(Native, WebApp), ERP시스템 개발
+    skill : Java, JavaScript, HTML/CSS, Xplatform
+
 certificate:
   - name: 정보처리기사
     acquisition_date: 2019.11.22
