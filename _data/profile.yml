@@ -18,9 +18,9 @@ career:
     place : 서울
     work_start : 2020.01.03
     work_end : 
-    rank : 사원
-    job : Android(Native, WebApp), ERP시스템 개발
-    skill : Java, JavaScript, HTML/CSS, Xplatform
+    rank : 선임(사원)
+    job : 사내 WEB 서비스, Android(Native, WebApp), ERP시스템 개발
+    skill : Java, JavaScript, JSP, jQuery, Xplatform
 
 certificate:
   - name: 정보처리기사
