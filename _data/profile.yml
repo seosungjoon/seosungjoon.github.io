@@ -14,11 +14,11 @@ education:
       average: 4.08
 
 career:
-  - name: 롯데정보통신
+  - name: 롯데정보통신 (재직중)
     place : 서울
     work_start : 2020.01.03
     work_end : 
-    rank : 선임(사원)
+    rank : 선임(대리)
     job : 사내 WEB 서비스, Android(Native, WebApp), ERP시스템 개발
     skill : Java, JavaScript, JSP, jQuery, Xplatform
 
