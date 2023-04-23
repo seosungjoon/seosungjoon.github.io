@@ -19,8 +19,8 @@ career:
     work_start : 2020.01.03
     work_end : 
     rank : 선임(대리)
-    job : 사내 WEB 서비스, Android(Native, WebApp), ERP시스템 개발
-    skill : Java, JavaScript, JSP, jQuery, Xplatform
+    job : 온라인 채널 WEB 서비스, ERP시스템 유지보수 및 개발
+    skill : Java, JavaScript, React, Spring, Xplatform
 
 certificate:
   - name: 정보처리기사
