@@ -19,10 +19,7 @@ career:
     work_start : 2020.01.03
     work_end : 2023.06.21
     rank : 선임(대리)
-    job : 
-     -B2C 온라인채널 홈페이지 개발 및 유지보수
-     -사내 ERPERP시스템 개발 및 유지보수
-     -사내 웹앱 개발 및 유지보수
+    job : B2C 온라인채널 홈페이지 / 사내 ERP 시스템 / 사내 웹앱 개발 및 유지보수
     skill : JavaScript, React, Java, Spring, Android, Xplatform
 
 certificate:
