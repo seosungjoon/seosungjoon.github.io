@@ -19,8 +19,11 @@ career:
     work_start : 2020.01.03
     work_end : 2023.06.21
     rank : 선임(대리)
-    job : 온라인 채널 WEB 서비스, ERP시스템 유지보수 및 개발
-    skill : Java, JavaScript, React, Spring, Xplatform
+    job : 
+     -B2C 온라인채널 홈페이지 개발 및 유지보수
+     -사내 ERPERP시스템 개발 및 유지보수
+     -사내 웹앱 개발 및 유지보수
+    skill : JavaScript, React, Java, Spring, Android, Xplatform
 
 certificate:
   - name: 정보처리기사
