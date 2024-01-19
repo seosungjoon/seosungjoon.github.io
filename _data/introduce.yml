@@ -1,9 +1,0 @@
-profile:
-  en:
-    name: Seo Sung Joon
-    description: "Hello World!"
-  ko:
-    name: 서성준
-    description: "안녕하세요! 잘부탁드립니다!"
-  img:
-    url: "/assets/img/profile.jpg"
