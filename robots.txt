@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: Googlebot
+User-agent: NaverBot
+Allow: /
+
+Sitemap: https://ehaken95.github.io/sitemap.xml
