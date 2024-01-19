@@ -10,7 +10,6 @@ yarn.lock
 
 # production
 /build
-
 # misc
 .eslintcache
 .DS_Store

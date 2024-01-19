@@ -10,6 +10,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.js\"",
     "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand"
@@ -45,6 +46,7 @@
     "auto-changelog": "~2.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^6.1.1",
     "prettier": "2.7.1",
     "react-scripts": "5.0.1",
     "sass": "^1.53.0",

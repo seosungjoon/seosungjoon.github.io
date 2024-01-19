@@ -53,23 +53,23 @@ Java / Swift / Javascript | AWS EC2 Linux / Node.js / Express.js / Phantom.js | 
 * Use-Case
 
 
-![use-case](./projIMG/ClassicBook/use-case.png)
+![use-case](/projIMG/ClassicBook/use-case.png)
 
 * Class Diagram
 
 
-![class-diagram](./projIMG/ClassicBook/class-diagram.png)
+![class-diagram](/projIMG/ClassicBook/class-diagram.png)
 
 
 ### 3. 내용 구성
 
-![내용1](./projIMG/ClassicBook/sample1.PNG)
+![내용1](/projIMG/ClassicBook/sample1.PNG)
 
-![내용2](./projIMG/ClassicBook/sample2.PNG)
+![내용2](/projIMG/ClassicBook/sample2.PNG)
 
 ### 4. 구현 설명
 
-![시스템구성](./projIMG/ClassicBook/sys-arch.PNG)
+![시스템구성](/projIMG/ClassicBook/sys-arch.PNG)
 
 NPM 모듈인 Phantomjs라는 것을 사용해 현재 운행되고 있는 대양휴머니티 칼리지 웹 사이트에 실제로 로그인할 수 있도록 연동하였다.<br>
 어플리케이션에서 입력된 학번과 비밀번호를 서버에 전송하여 Phantomjs를 통해 로그인 정보가 일치하는지 아닌지 판별하고, <br>
@@ -460,7 +460,7 @@ $ pm2 start app.js
 <br>
 SW등록번호 C-2019-017229<br>
 
-![SW등록](./projIMG/ClassicBook/swinfo.png)
+![SW등록](/projIMG/ClassicBook/swinfo.png)
 
 <br>
 "본 연구는 과학기술정보통신부 및 정보통신기술진흥센터의 SW중심대학 사업의 연구결과로 수행되었음"(2015-0-00938)
