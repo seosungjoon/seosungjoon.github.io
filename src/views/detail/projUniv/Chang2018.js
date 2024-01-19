@@ -59,7 +59,7 @@ Java / HTML5 / CSS3 / Javascript / Swift | JQuery / MDL / BootStrap | GoogleMaps
 안드로이드와 IOS플랫폼을 이용하여 개발하는 것이다.<br>
 단지 좌표선상  중간 값을 표시하는 것에 그치는 대신, 해당 값을 가장 인근 지하철역으로 좌표를 보정해주는 기능을 추가하여 기존 어플들과의 차별성을 둔다.
 
-![차별성](./projIMG/GIS-App/near-subway.png)
+![차별성](/projIMG/GIS-App/near-subway.png)
 
 모바일 애플리케이션을 만드는 방법은 네이티브 언어를 사용하는 방법이 대표적이지만 꼭 자바 또는 스위프트를 이용해야만 만들 수 있는 것은 아니다.<br>
 안드로이드와 IOS 앱을 한 번에 만들 수 있는 방법도 존재하는데, 대표적으로 코르도바를 이용한 하이브리드 앱과 C#을 이용한 자마린이 있다.<br>
@@ -68,7 +68,7 @@ Java / HTML5 / CSS3 / Javascript / Swift | JQuery / MDL / BootStrap | GoogleMaps
 
 ### System-Architecture
 
-![시스템 구성도](./projIMG/GIS-App/Sys-Arc.PNG)
+![시스템 구성도](/projIMG/GIS-App/Sys-Arc.PNG)
 
 ※ 구글 Places API에서 JSON파싱을 통해 중간값 근처의 지하철을 검색해주는 시스템을 추가하여 기존 출시되어있는 어플들과의 차별성을 높임.
 
@@ -76,24 +76,24 @@ Java / HTML5 / CSS3 / Javascript / Swift | JQuery / MDL / BootStrap | GoogleMaps
 
 다음 표는 안드로이드 어플의 “우리어디서 만나?” 길찾기 어플과 본 논문에서 구현한 애플을 수행한 결과를 나타낸다.
 
-![타어플비교](./projIMG/GIS-App/vs-otherapp.PNG)
+![타어플비교](/projIMG/GIS-App/vs-otherapp.PNG)
 
-![타어플비교2](./projIMG/GIS-App/vs-otherapp2.PNG)
+![타어플비교2](/projIMG/GIS-App/vs-otherapp2.PNG)
 
 기존 어플들이 단지 중간좌표만을 검색한다면, 본 논문에서 제안한 어플은 기존 어플리케이션들이 제작한 기능을 바탕으로, 중간좌표 근처의 가장 가깝고, <br>
 사용자가 선택했던 원하는 장소유형을 선택하여 검색한다. 나아가 해당 지점까지 길 찾기를 수행하는 기능까지 추가되어 있다.
 
 ## 시연 예시
 
-![시연 예시1](./projIMG/GIS-App/test1.png)
+![시연 예시1](/projIMG/GIS-App/test1.png)
 
 약속을 잡을 인원수를 선택합니다. 최대 6명까지 가능합니다.
 
-![시연 예시2](./projIMG/GIS-App/test2.png)
+![시연 예시2](/projIMG/GIS-App/test2.png)
 
 각각 인원의 위치를 설정합니다. Google Maps를 기반으로 검색 및 선택 가능합니다.
 
-![시연 예시3](./projIMG/GIS-App/test3.png)
+![시연 예시3](/projIMG/GIS-App/test3.png)
 
 최종 결과물입니다. 공유하기 버튼을 이용하여 SNS메신저로 전송할 수 있습니다.
 
@@ -196,7 +196,7 @@ Public void onMapClick(LatLng point){
 
 ## 성과
 
-![성과](./projIMG/GIS-App/awards.png)
+![성과](/projIMG/GIS-App/awards.png)
 
 해당 어플리케이션은 세종대학교 5회 창의설계경진대회에서 우수상을 수상하였습니다.
 

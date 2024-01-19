@@ -88,7 +88,7 @@ Java / Swift / Javascript | Raspberry PI 3B / Node.js / Express.js | MySQL
 
 ### 3. 시스템구성도
 
-![시스템구성도1](./projIMG/Chang2019/sysarch.png)
+![시스템구성도1](/projIMG/Chang2019/sysarch.png)
 
 우선 통신은 모두 http통신으로 이루어지고 사용자는 책에 대한 상태를 체크하고 사진을 찍습니다.<br>
 머신러닝을 통해서 책인지 아닌지를 판별하고 책일 경우에는 책의 제목을 추출해서 서버로 보내줍니다.<br>
@@ -104,9 +104,9 @@ Java / Swift / Javascript | Raspberry PI 3B / Node.js / Express.js | MySQL
 <br>
 <br>
 
-![예시1](./projIMG/Chang2019/sample1.PNG)
+![예시1](/projIMG/Chang2019/sample1.PNG)
 
-![예시2](./projIMG/Chang2019/sample2.PNG)
+![예시2](/projIMG/Chang2019/sample2.PNG)
 
 ## 기능 구현
 <br>
@@ -358,7 +358,7 @@ protected void onPostExecute(String result) {
 
 ### 성과
 
-![성과](./projIMG/Chang2019/awards.png)
+![성과](/projIMG/Chang2019/awards.png)
 
 해당 모듈은 세종대학교 7회 창의설계경진대회에서 최우수상을 수상하였습니다.
 

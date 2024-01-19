@@ -49,21 +49,21 @@ const MDText = `
 
 ### VR드론
 
-![VR드론](./projIMG/ICT/vrdrone.PNG)
+![VR드론](/projIMG/ICT/vrdrone.PNG)
 
 
 vr로 사용자가 드론이 보는 시야를 직접 눈앞에서 보듯 체험할 수 있으며 내장되어 있는 3D맵핑 기능을 통해서 지도를 구현할 수 있다.
 
 ### 예시화면
 
-![예시](./projIMG/ICT/example.PNG)
+![예시](/projIMG/ICT/example.PNG)
 
 
 ## 기술 설명
 
 ### 1.촬영용 드론
 
-![설계도](./projIMG/ICT/dronecad.PNG)
+![설계도](/projIMG/ICT/dronecad.PNG)
 
 CAD를 이용한 가상의 VR드론 설계도
 
@@ -79,7 +79,7 @@ VR은 인간의 모든 감각을 사용하여, 실제처럼 느낄 수 있는 �
 
 ### 3.3D맵핑 기술
 
-![3D맵핑기술](./projIMG/ICT/3dmapping.PNG)
+![3D맵핑기술](/projIMG/ICT/3dmapping.PNG)
 
 
 라이브 드론맵 접근이 불가능한 지역에 드론을 띄워 지도를 구축하고 이를 실시간으로 확인할 수 있는 기술이다. <br>
@@ -89,7 +89,7 @@ VR은 인간의 모든 감각을 사용하여, 실제처럼 느낄 수 있는 �
 
 ## 성과
 
-![성과](./projIMG/ICT/ictawards.PNG)
+![성과](/projIMG/ICT/ictawards.PNG)
 
 명확한 주제를 가지고 제출한 아이디어가 본 공모전에서 최우수상을 수상하였습니다.
 
