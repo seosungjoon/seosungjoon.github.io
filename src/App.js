@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom'
 import './scss/style.scss'
 import './scss/_custom.scss'
 import ScrollToTop from "./views/ScrollRestore";
@@ -21,7 +21,7 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <Suspense fallback={loading}>
           <Routes>
@@ -32,7 +32,7 @@ class App extends Component {
             <Route path="*" name="Home" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
