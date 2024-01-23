@@ -3,7 +3,6 @@ import {
   CCard,
   CCardBody,
   CCardHeader,
-  CCardLink,
   CCardSubtitle,
   CCardText,
   CCardTitle,
@@ -157,16 +156,7 @@ const Profile = () => {
               <CCardBody>
                 <CCardTitle><strong>대한민국 자전거 국토종주</strong></CCardTitle>
                 <CCardText>
-                  인천아라뱃길부터 낙동강하굿둑까지의 633km 자전거길을 자전거로 종주 (2019.07.17~2019.07.22)
-                </CCardText>
-              </CCardBody>
-            </CCard>
-            <p></p>
-            <CCard >
-              <CCardBody>
-                <CCardTitle><strong>ITQ 정보기술자격(OA MASTER)</strong></CCardTitle>
-                <CCardText>
-                  주관처 : 한국생산성본부 | 취득일 : 2012.08.02
+                  인천아라뱃길부터 낙동강하굿둑까지의 633km 자전거길을 자전거로 종주  | 기간 2019.07.17 ~ 2019.07.22
                 </CCardText>
               </CCardBody>
             </CCard>
