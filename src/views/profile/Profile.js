@@ -116,9 +116,9 @@ const Profile = () => {
               <CCardBody>
                 <CCardTitle><strong>제 7회 창의설계경진대회 최우수상</strong></CCardTitle>
                 <CCardText>
-                  멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
+                  머신러닝을 통한 중고 책 거래가 자동측정 모듈 구축
                   <br/>
-                  주관처 : 세종대학교 소프트웨어 중심대학 사업단 | 수상일 : 2018.06.08
+                  주관처 : 세종대학교 소프트웨어 중심대학 사업단 | 수상일 : 2019.06.07
                 </CCardText>
               </CCardBody>
             </CCard>
@@ -141,6 +141,32 @@ const Profile = () => {
                   멀티플랫폼을 위한 GIS 어플리케이션 기획 및 개발
                   <br/>
                   주관처 : 세종대학교 소프트웨어 중심대학 사업단 | 수상일 : 2018.06.08
+                </CCardText>
+              </CCardBody>
+            </CCard>
+          </CCardBody>
+        </CCard>
+      </CCol>
+      <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>기타 활동 / Activity</strong>
+          </CCardHeader>
+          <CCardBody>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>대한민국 자전거 국토종주</strong></CCardTitle>
+                <CCardText>
+                  인천아라뱃길부터 낙동강하굿둑까지의 633km 자전거길을 자전거로 종주 (2019.07.17~2019.07.22)
+                </CCardText>
+              </CCardBody>
+            </CCard>
+            <p></p>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>ITQ 정보기술자격(OA MASTER)</strong></CCardTitle>
+                <CCardText>
+                  주관처 : 한국생산성본부 | 취득일 : 2012.08.02
                 </CCardText>
               </CCardBody>
             </CCard>
