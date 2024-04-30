@@ -61,18 +61,36 @@ const Profile = () => {
           <CCardBody>
             <CCard >
               <CCardBody>
-                <CCardTitle><strong>롯데정보통신</strong></CCardTitle>
+                <CCardTitle><strong>(현) KT DS </strong></CCardTitle>
                 <CCardSubtitle className="mb-2 text-medium-emphasis">
                   <p className="text-medium-emphasis small">
                     서울
                   </p>
                 </CCardSubtitle>
                 <CCardText>
-                    근무기간 : 2020.01.03 ~ 2023.06.21 | 직급 : 선임(대리)
+                  <strong>근무 기간</strong> : 2024.03.04 ~ | 직급 : 대리
                   <br/>
-                  직무 : B2C 온라인채널 홈페이지 / 사내 ERP 시스템 / 사내 웹앱 개발 및 유지보수
+                  <strong> 직무 </strong>: API GW기반 Back-End 개발 과제 수행 (R&D, SM)
                   <br/>
-                  사용 언어 : JavaScript, React, Java, Spring, Android, Xplatform
+                  <strong> 활용 기술 </strong>: Spring-Boot (Java 11), PostgreSql, AWS, GitLab/Jenkins
+                </CCardText>
+              </CCardBody>
+            </CCard>
+            <p></p>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>(전) 롯데정보통신 </strong></CCardTitle>
+                <CCardSubtitle className="mb-2 text-medium-emphasis">
+                  <p className="text-medium-emphasis small">
+                    서울 / 2024.03 ~ 롯데이노베이트 사명변경
+                  </p>
+                </CCardSubtitle>
+                <CCardText>
+                  <strong>근무 기간</strong> : 2020.01.03 ~ 2023.06.21 | 직급 : 선임(대리)
+                  <br/>
+                  <strong> 직무 </strong> : B2C 온라인채널 홈페이지 / 사내 ERP 시스템 / 사내 웹앱 개발 및 유지보수
+                  <br/>
+                  <strong> 활용 기술 </strong> : JavaScript, React, Java 8, Spring, Android, Xplatform, JEUS
                 </CCardText>
               </CCardBody>
             </CCard>

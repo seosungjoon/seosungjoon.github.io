@@ -92,11 +92,13 @@ const Dashboard = () => {
               <strong>And, Next?</strong>
             </CCardHeader>
             <CCardBody>
-              <CCardTitle><strong>4년차의 프론트엔드 개발자</strong></CCardTitle>
+              <CCardTitle><strong>5년차의 Full-Stack 개발자</strong></CCardTitle>
               <CCardText >
-                웹 서비스 (JavaScript, Java, X platform, React 등) 기반의 4년차 WEB 개발자입니다.
+                웹 서비스 (JavaScript, Java, X platform, React 등) 기반의 5년차 WEB 개발자입니다.
                 <br/>
                 서비스 유지보수와 더불어 새로운 기술에 관심이 많습니다
+                <br/>
+                • API GW 기반 R&D 개발 경험
                 <br/>
                 • 웹 앱 서비스의 프론트 엔드, Spring 개발 운영 경험
                 <br/>
