@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react'
-import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './scss/style.scss'
 import './scss/_custom.scss'
 import ScrollToTop from "./views/ScrollRestore";
