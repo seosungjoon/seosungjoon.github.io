@@ -7,6 +7,7 @@ const Profile = React.lazy(() => import('./views/profile/Profile'))
 
 //Detail
 const CompAll = React.lazy(() => import('./views/detail/projComp/AllListComp'))
+const CompAllKT = React.lazy(() => import('./views/detail/projComp/AllListCompKT'))
 const UnivAll = React.lazy(() => import('./views/detail/projUniv/AllList'))
 const UnivChang2019 = React.lazy(() => import('./views/detail/projUniv/Chang2019'))
 const UnivCapstone = React.lazy(() => import('./views/detail/projUniv/Capstone'))
@@ -20,6 +21,7 @@ const routes = [
   { path: '/profile', name: 'Profile', element: Profile },
 
   { path: '/detail/projComp/AllListComp', name: '경력사항_롯데정보통신', element: CompAll },
+  { path: '/detail/projComp/AllListCompKT', name: '경력사항_KTDS', element: CompAllKT },
 
   { path: '/detail/projUniv/UnivAll', name: '전체 목록', element: UnivAll },
   { path: '/detail/projUniv/UnivChang2019', name: '창의설계경진대회_2019', element: UnivChang2019 },

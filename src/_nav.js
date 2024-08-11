@@ -44,6 +44,11 @@ const _nav = [
     items: [
       {
         component: CNavItem,
+        name: 'KT DS',
+        to: '/detail/projComp/AllListCompKT',
+      },
+      {
+        component: CNavItem,
         name: '롯데정보통신',
         to: '/detail/projComp/AllListComp',
       },

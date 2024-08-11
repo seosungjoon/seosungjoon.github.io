@@ -70,19 +70,19 @@ const Profile = () => {
                 <CCardText>
                   <strong>근무 기간</strong> : 2024.03.04 ~ | 직급 : 대리
                   <br/>
-                  <strong> 직무 </strong>: API GW기반 Back-End 개발 과제 수행 (R&D, SM)
+                  <strong> 직무 </strong>: API GW기반 Back-End 개발 과제 수행 (R&D, SI)
                   <br/>
-                  <strong> 활용 기술 </strong>: Spring-Boot (Java 11), PostgreSql, AWS, GitLab/Jenkins
+                  <strong> 활용 기술 </strong>: Spring-Boot (Java 17), PostgreSql, AWS, GitLab/Jenkins
                 </CCardText>
               </CCardBody>
             </CCard>
             <p></p>
             <CCard >
               <CCardBody>
-                <CCardTitle><strong>(전) 롯데정보통신 </strong></CCardTitle>
+                <CCardTitle><strong>(전) 롯데이노베이트 </strong></CCardTitle>
                 <CCardSubtitle className="mb-2 text-medium-emphasis">
                   <p className="text-medium-emphasis small">
-                    서울 / 2024.03 ~ 롯데이노베이트 사명변경
+                    서울 / 2024.03 ~ 롯데정보통신 사명변경
                   </p>
                 </CCardSubtitle>
                 <CCardText>
@@ -103,6 +103,15 @@ const Profile = () => {
             <strong>자격증 / Certificate</strong>
           </CCardHeader>
           <CCardBody>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>AWS Certified Solutions Architect - Associate</strong></CCardTitle>
+                <CCardText>
+                  주관처 : AWS | 취득일 : 2024.08.03
+                </CCardText>
+              </CCardBody>
+            </CCard>
+            <p></p>
             <CCard >
               <CCardBody>
                 <CCardTitle><strong>정보처리기사</strong></CCardTitle>
