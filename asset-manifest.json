@@ -1,17 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.dc44ffa3.css",
-    "main.js": "/static/js/main.7ecce600.js",
+    "main.js": "/static/js/main.acdb16ce.js",
     "static/css/939.e367b0e1.chunk.css": "/static/css/939.e367b0e1.chunk.css",
-    "static/js/939.b5ed83be.chunk.js": "/static/js/939.b5ed83be.chunk.js",
-    "static/js/670.05c10311.chunk.js": "/static/js/670.05c10311.chunk.js",
-    "static/js/455.58bf7f05.chunk.js": "/static/js/455.58bf7f05.chunk.js",
-    "static/js/13.1b6682b7.chunk.js": "/static/js/13.1b6682b7.chunk.js",
-    "static/js/778.e687a8fa.chunk.js": "/static/js/778.e687a8fa.chunk.js",
+    "static/js/939.89b19e35.chunk.js": "/static/js/939.89b19e35.chunk.js",
     "static/js/27.ee532838.chunk.js": "/static/js/27.ee532838.chunk.js",
     "static/js/786.e46056c5.chunk.js": "/static/js/786.e46056c5.chunk.js",
-    "static/js/327.2e87ef75.chunk.js": "/static/js/327.2e87ef75.chunk.js",
+    "static/js/327.4164982e.chunk.js": "/static/js/327.4164982e.chunk.js",
     "static/js/887.7e1d6a88.chunk.js": "/static/js/887.7e1d6a88.chunk.js",
+    "static/js/963.1bbf0b6b.chunk.js": "/static/js/963.1bbf0b6b.chunk.js",
     "static/js/25.c1986cbd.chunk.js": "/static/js/25.c1986cbd.chunk.js",
     "static/css/482.802a08e4.chunk.css": "/static/css/482.802a08e4.chunk.css",
     "static/js/482.9a9b2a8e.chunk.js": "/static/js/482.9a9b2a8e.chunk.js",
@@ -21,15 +18,14 @@
     "static/js/601.6fdcc69d.chunk.js": "/static/js/601.6fdcc69d.chunk.js",
     "static/css/331.802a08e4.chunk.css": "/static/css/331.802a08e4.chunk.css",
     "static/js/331.12153038.chunk.js": "/static/js/331.12153038.chunk.js",
-    "static/js/465.a93ea2a7.chunk.js": "/static/js/465.a93ea2a7.chunk.js",
-    "static/js/395.93e61ad7.chunk.js": "/static/js/395.93e61ad7.chunk.js",
-    "static/js/201.d66ddd80.chunk.js": "/static/js/201.d66ddd80.chunk.js",
+    "static/js/395.4c58ecc7.chunk.js": "/static/js/395.4c58ecc7.chunk.js",
+    "static/js/155.77d5a030.chunk.js": "/static/js/155.77d5a030.chunk.js",
     "static/media/profile.jpg": "/static/media/profile.7a9e8b57dbb882bbf346.jpg",
     "static/media/MDF.png": "/static/media/MDF.1774180f093515c60703.png",
     "index.html": "/index.html"
   },
   "entrypoints": [
     "static/css/main.dc44ffa3.css",
-    "static/js/main.7ecce600.js"
+    "static/js/main.acdb16ce.js"
   ]
 }
