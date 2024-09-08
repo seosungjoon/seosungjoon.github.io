@@ -16,46 +16,6 @@ const Profile = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>학력 / Education</strong>
-          </CCardHeader>
-          <CCardBody>
-            <CCard >
-              <CCardBody>
-                <CCardTitle><strong>세종대학교</strong></CCardTitle>
-                <CCardSubtitle className="mb-2 text-medium-emphasis">
-                  <p className="text-medium-emphasis small">
-                    학사(4년제) / 서울
-                  </p>
-                </CCardSubtitle>
-                <CCardText>
-                  재학기간 : 2014.03~2020.02 | 재학여부 : 졸업(공학인증 수료)
-                  <br/>
-                  주전공 : 컴퓨터공학과
-                  <br/>
-                  [ 총 이수학점 : 130학점 (4.08 / 4.5) ]
-                </CCardText>
-              </CCardBody>
-            </CCard>
-            <p></p>
-            <CCard >
-              <CCardBody>
-                <CCardTitle><strong>창현고등학교</strong></CCardTitle>
-                <CCardSubtitle className="mb-2 text-medium-emphasis">
-                  <p className="text-medium-emphasis small">
-                    고등학교 / 수원
-                  </p>
-                </CCardSubtitle>
-                <CCardText>
-                  재학기간 : 2011.03~2014.02 | 재학여부 : 졸업
-                </CCardText>
-              </CCardBody>
-            </CCard>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
             <strong>경력 / Career</strong>
           </CCardHeader>
           <CCardBody>
@@ -91,6 +51,46 @@ const Profile = () => {
                   <strong> 직무 </strong> : B2C 온라인채널 홈페이지 / 사내 ERP 시스템 / 사내 웹앱 개발 및 유지보수
                   <br/>
                   <strong> 활용 기술 </strong> : JavaScript, React, Java 8, Spring, Android, Xplatform, JEUS
+                </CCardText>
+              </CCardBody>
+            </CCard>
+          </CCardBody>
+        </CCard>
+      </CCol>
+      <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>학력 / Education</strong>
+          </CCardHeader>
+          <CCardBody>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>세종대학교</strong></CCardTitle>
+                <CCardSubtitle className="mb-2 text-medium-emphasis">
+                  <p className="text-medium-emphasis small">
+                    학사(4년제) / 서울
+                  </p>
+                </CCardSubtitle>
+                <CCardText>
+                  재학기간 : 2014.03~2020.02 | 재학여부 : 졸업(공학인증 수료)
+                  <br/>
+                  주전공 : 컴퓨터공학과
+                  <br/>
+                  [ 총 이수학점 : 130학점 (4.08 / 4.5) ]
+                </CCardText>
+              </CCardBody>
+            </CCard>
+            <p></p>
+            <CCard >
+              <CCardBody>
+                <CCardTitle><strong>창현고등학교</strong></CCardTitle>
+                <CCardSubtitle className="mb-2 text-medium-emphasis">
+                  <p className="text-medium-emphasis small">
+                    고등학교 / 수원
+                  </p>
+                </CCardSubtitle>
+                <CCardText>
+                  재학기간 : 2011.03~2014.02 | 재학여부 : 졸업
                 </CCardText>
               </CCardBody>
             </CCard>

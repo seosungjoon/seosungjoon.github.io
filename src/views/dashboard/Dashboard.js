@@ -20,8 +20,7 @@ const Dashboard = () => {
       <CRow>
         <CCol xs={12}>
           <p><strong>My Dev-footprints</strong></p>
-
-          <CCard textColor={'dark'} className={`mb-3 border-top-success border-top-3`}>
+          <CCard textColor={'dark'} className={`mb-3 border-top-dark border-top-3`}>
             <CCardHeader>
               <strong>2017. 01</strong>
             </CCardHeader>
@@ -35,6 +34,8 @@ const Dashboard = () => {
               </CCardText>
             </CCardBody>
           </CCard>
+        </CCol>
+        <CCol xs>
           <CCard textColor={'dark'} className={`mb-3 border-top-danger border-top-3`}>
             <CCardHeader>
               <strong>2018. 03</strong>
@@ -48,7 +49,11 @@ const Dashboard = () => {
               </CCardText>
             </CCardBody>
           </CCard>
-          <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
+        </CCol>
+      </CRow>
+      <CRow xs={{cols: 1, gutter :1}} md = {{cols:2}}>
+        <CCol xs>
+          <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3 `}>
             <CCardHeader>
               <strong>2018. 12</strong>
             </CCardHeader>
@@ -62,7 +67,9 @@ const Dashboard = () => {
               </CCardText>
             </CCardBody>
           </CCard>
-          <CCard textColor={'dark'} className={`mb-3 border-top-dark border-top-3`}>
+        </CCol>
+        <CCol xs>
+          <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
             <CCardHeader>
               <strong>2019. 06</strong>
             </CCardHeader>
@@ -75,7 +82,11 @@ const Dashboard = () => {
               </CCardText>
             </CCardBody>
           </CCard>
-          <CCard textColor={'dark'} className={`mb-3 border-top-primary border-top-3`}>
+        </CCol>
+      </CRow>
+      <CRow  >
+        <CCol xs={12}>
+          <CCard textColor={'dark'} className={`mb-3 border-top-success border-top-3`}>
             <CCardHeader>
               <strong>2020. 01</strong>
             </CCardHeader>
@@ -87,7 +98,33 @@ const Dashboard = () => {
               </CCardText>
             </CCardBody>
           </CCard>
-          <CCard textColor={'dark'} className={`mb-3 border-top-success border-top-3`}>
+        </CCol>
+        <CCol xs>
+          <CCard textColor={'dark'} className={`mb-3 border-top-warning border-top-3`}>
+            <CCardHeader>
+              <strong>2023. 06</strong>
+            </CCardHeader>
+            <CCardBody>
+              <CCardTitle><strong>퇴사, 그리고 휴식</strong></CCardTitle>
+              <CCardText >
+                2023년 6월, 앞만 보고 달렸던 저에게 휴식과 재정비 기회를 위해 퇴사를 결심했습니다.<br/>
+                퇴사 이후 여행도 다니고, 틈틈이 개발 지식과 새로운 기술에 대한 학습을 병행하였습니다.<br/>
+              </CCardText>
+            </CCardBody>
+          </CCard>
+          <CCard textColor={'dark'} className={`mb-3 border-top-primary border-top-3`}>
+            <CCardHeader>
+              <strong>2024. 03</strong>
+            </CCardHeader>
+            <CCardBody>
+              <CCardTitle><strong>이직, 그리고 백엔드 개발자로의 성장</strong></CCardTitle>
+              <CCardText >
+                2024년 3월, KT DS 솔루션개발 조직에 경력직으로 이직하였습니다.<br/>
+                백엔드 담당으로서, 주로 R&D 업무를 진행하며 성장하고 있습니다.<br/>
+              </CCardText>
+            </CCardBody>
+          </CCard>
+          <CCard textColor={'dark'} className={`mb-3 border-top-danger border-top-3`}>
             <CCardHeader>
               <strong>And, Next?</strong>
             </CCardHeader>
@@ -113,7 +150,6 @@ const Dashboard = () => {
             </CCardBody>
           </CCard>
         </CCol>
-
       </CRow>
 
     </>
