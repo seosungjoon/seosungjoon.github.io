@@ -30,9 +30,9 @@ const Profile = () => {
                 <CCardText>
                   <strong>근무 기간</strong> : 2024.03.04 ~ | 직급 : 대리
                   <br/>
-                  <strong> 직무 </strong>: API GW기반 Back-End 개발 과제 수행 (R&D, SI)
+                  <strong> 직무 </strong>: Back-End 솔루션 개발 - 자사 API GW 솔루션 (R&D, SI)
                   <br/>
-                  <strong> 활용 기술 </strong>: Spring-Boot (Java 17), PostgreSql, AWS, GitLab/Jenkins
+                  <strong> 활용 기술 </strong>: Java17, Java11, Spring Boot, JPA, QueryDSL, AWS(SAA 자격증 보유), PostgreSql(DB), GitLab/Jenkins(CI/CD)
                 </CCardText>
               </CCardBody>
             </CCard>
@@ -50,7 +50,7 @@ const Profile = () => {
                   <br/>
                   <strong> 직무 </strong> : B2C 온라인채널 홈페이지 / 사내 ERP 시스템 / 사내 웹앱 개발 및 유지보수
                   <br/>
-                  <strong> 활용 기술 </strong> : JavaScript, React, Java 8, Spring, Android, Xplatform, JEUS
+                  <strong> 활용 기술 </strong> : JavaScript, React, Xplatform, Java 8, Spring, Android, JEUS, Linux, Oracle(DB), CI/CD(GitLab),
                 </CCardText>
               </CCardBody>
             </CCard>
