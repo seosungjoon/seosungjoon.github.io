@@ -47,7 +47,20 @@ const AllList = () => {
               <p></p>
               <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
                 <CCardBody>
-                  <CCardTitle><strong>1. AICentro 솔루션 고도화 프로젝트 </strong></CCardTitle>
+                  <CCardTitle><strong>1. AI Gateway 솔루션 구축 프로젝트 </strong></CCardTitle>
+                  <CCardText>
+                    - 기간 : 2024.11 ~<br/>
+                    - 역할 : AI 기술 분석 및 Backend 개발<br/>
+                    - 주요 업무내용<br/>
+                    * API Gateway 솔루션을 기초로 AI 기술을 접목 또는 AI Gateway 기능 추가 구축 프로젝트(진행중)<br/>
+                    * (대외비)
+                  </CCardText>
+                </CCardBody>
+              </CCard>
+              <p></p>
+              <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
+                <CCardBody>
+                  <CCardTitle><strong>2. AICentro 솔루션 고도화 프로젝트 </strong></CCardTitle>
                   <CCardText>
                     - 기간 : 2024.09.19 ~ 2024.10.31<br/>
                     - 역할 : MSA 기반 Backend 프로젝트 Spring Boot 버전업 & PL<br/>
@@ -58,18 +71,7 @@ const AllList = () => {
                 </CCardBody>
               </CCard>
               <p></p>
-              <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
-                <CCardBody>
-                  <CCardTitle><strong>2. AI Gateway 솔루션 구축 프로젝트 </strong></CCardTitle>
-                  <CCardText>
-                    - 기간 : 2024.08.09 ~<br/>
-                    - 역할 : AI 기술 분석 및 Backend 개발<br/>
-                    - 주요 업무내용<br/>
-                    * API Gateway 솔루션을 기초로 AI 기술을 접목 또는 AI Gateway 기능 추가 구축 프로젝트(진행중)<br/>
-                  </CCardText>
-                </CCardBody>
-              </CCard>
-              <p></p>
+
               <CCard textColor={'dark'} className={`mb-3 border-top-info border-top-3`}>
                 <CCardBody>
                   <CCardTitle><strong>3. 태국 AIS TV 구축사업 PoC </strong></CCardTitle>
